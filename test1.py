@@ -18,7 +18,7 @@ from __future__ import unicode_literals
 import nltk
 
 def main():
-    grammar1 = nltk.parse_cfg("""
+    grammar1 = nltk.grammar.CFG.fromstring("""
     S -> NP VP
     NP -> Det Nom | PropN
     Nom -> Adj Nom | N
