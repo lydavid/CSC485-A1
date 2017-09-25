@@ -11,19 +11,19 @@ from __future__ import unicode_literals
 # using. The 'as _Parser' makes the token "_Parser" refer to the
 # 'ArgumentParser' class instead of 'ArgumentParser'. This extra
 # aliasing is not really necessary
-from argparse import ArgumentParser as _Parser
+#from argparse import ArgumentParser as _Parser
 
 # nltk uses "lazy loading," so importing nltk directly rather than using
 # relative imports is not terribly slow
 import nltk
 
-def main(args=None):
+def main():
     grammar1 = nltk.data.load('file:ex1.cfg')
-    sent = "Joe frightened the angry bear".split()
-    rd_parser = nltk.RecursiveDescentParser(grammar1)
-    for tree in rd_parser.nbest_parse(sent):
-        print tree
+    sent = 'Joe frightened the angry bear'.split()
+    rd = nltk.RecursiveDescentParser(grammar1)
+    for tree in rd.parse(sent): #.nbest_parse(sent):
+        print(tree)
     
 
 if __name__ == '__main__':
-    exit(main())
+    main()
