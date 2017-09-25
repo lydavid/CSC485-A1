@@ -31,7 +31,7 @@ def main():
     V -> 'chased' | 'saw' | 'said' | 'thought' | 'was' | 'put'
     P -> 'on'
     """)
-    sent = 'Joe frightened the angry bear'.split()
+    sent = 'Joe saw the angry bear'.split()
     rd = nltk.RecursiveDescentParser(grammar1)
     for tree in rd.parse(sent): #.nbest_parse(sent):
         print(tree)
