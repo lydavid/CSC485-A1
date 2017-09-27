@@ -10,7 +10,7 @@ from __future__ import unicode_literals
 import nltk
 
 def main():
-    grammar = nltk.parse.load_parser('q1.cfg')
+    grammar = nltk.data.load('file:/h/u12/g6/00/lydavid1/Desktop/csc485/CSC485-A1/q1.cfg')
     sent = 'people walks their dogs in parks'.split()
     sr = nltk.ShiftReduceParser(grammar)
     for tree in sr.parse(sent): #.nbest_parse(sent):
