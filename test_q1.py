@@ -11,13 +11,14 @@ import nltk
 
 def main():
 
-
-	with open('q1.cfg', 'r') as afile:
-		cfg_string = file.read()
-
+    with open('q1.cfg', 'r') as afile:
+        cfg_string = afile.read()
     grammar = nltk.grammar.CFG.fromstring(cfg_string)
-    sent = 'people walks their dogs in parks'.split()
-    sr = nltk.ShiftReduceParser(grammar)
+    sent = 'people walk their dogs in happy parks'.split()
+    
+    sr = nltk.parse.BottomUpChartParser(grammar)
+    #tree = sr.parse_one(sent)
+    #print(tree)
     for tree in sr.parse(sent): #.nbest_parse(sent):
         print(tree)
     
