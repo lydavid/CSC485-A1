@@ -52,7 +52,7 @@ def main():
     ###Interrogative what (thing is missing) ###
     attempt_to_parse('what should people walk in parks', grammar)
     attempt_to_parse('what will people saw', grammar)
-    attempt_to_parse('what should people saw under the red statue', grammar)
+    attempt_to_parse('what should people saw under red statues', grammar)
 
     ###Interrogative where (location is missing) ###
     attempt_to_parse('where should people walk their dogs in parks', grammar)
