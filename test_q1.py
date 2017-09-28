@@ -36,7 +36,7 @@ def main():
     attempt_to_parse('walk your dogs', grammar)
 
     attempt_to_parse('who walk their dogs in parks', grammar)
-    attempt_to_parse('what will people walk their dogs', grammar)
+    attempt_to_parse('what will people walk in parks', grammar)
     attempt_to_parse('where should people walk their dogs', grammar)
     attempt_to_parse('should people walk their dogs in parks', grammar)
 
@@ -44,6 +44,18 @@ def main():
     attempt_to_parse('what should people walk their dogs in parks', grammar, should_parse=False)
     attempt_to_parse('where walk their dogs in parks', grammar, should_parse=False)
     
+    attempt_to_parse('where will people walk their dogs in parks', grammar)
+
+    ###Interrogative who (subject is missing)###
+    attempt_to_parse('who saw the dogs under the statues', grammar)
+
+    ###Interrogative what (thing is missing) ###
+    attempt_to_parse('what should people walk in parks', grammar)
+    attempt_to_parse('what will people saw', grammar)
+    attempt_to_parse('what should people saw under the red statue', grammar)
+
+    ###Interrogative where (location is missing) ###
+    attempt_to_parse('where should people walk their dogs in parks', grammar)
     attempt_to_parse('where will people walk their dogs in parks', grammar)
 
 if __name__ == '__main__':
