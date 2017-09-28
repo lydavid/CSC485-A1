@@ -9,18 +9,41 @@ from __future__ import unicode_literals
 
 import nltk
 
+def attempt_to_parse(sentence, grammar, should_parse=True):
+
+    print()
+    head_string = '\n(' + sentence + ')'
+    if should_parse:
+        head_string = head_string + ' (Should parse)'
+    else:
+        head_string = head_string + ' (Should not parse)'
+    print(head_string + '\n')
+
+    parser = nltk.parse.BottomUpChartParser(grammar)
+    for tree in parser.parse(sentence):
+        print(tree)
+
+
 def main():
 
     with open('q1.cfg', 'r') as afile:
         cfg_string = afile.read()
     grammar = nltk.grammar.CFG.fromstring(cfg_string)
-    sent = 'people walk their dogs in happy parks'.split()
+
+    ###Test Cases###
+    attempt_to_parse('people walk their dogs in parks', grammar)
+
+    attempt_to_parse('walk your dogs', grammar)
+
+    attempt_to_parse('who walk their dogs in parks', grammar)
+    attempt_to_parse('what will people walk in parks', grammar)
+    attempt_to_parse('where should people walk their dogs', grammar)
+    attempt_to_parse('should people walk their dogs in parks', grammar)
+
+    attempt_to_parse('what people walk in parks', grammar, should_parse=False)
+    attempt_to_parse('what should people walk their dogs in parks', grammar, should_parse=False)
+    attempt_to_parse('where walk their dogs in parks', grammar, should_parse=False)
     
-    sr = nltk.parse.BottomUpChartParser(grammar)
-    #tree = sr.parse_one(sent)
-    #print(tree)
-    for tree in sr.parse(sent): #.nbest_parse(sent):
-        print(tree)
     
 
 if __name__ == '__main__':
