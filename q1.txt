@@ -1,0 +1,22 @@
+S -> NP VP
+NP -> N
+NP -> Det N
+NP -> Adj N
+PP -> P NP
+VP -> V
+VP -> V NP
+VP -> V NP PP 
+Det -> 'the' | 'their' | 'your'
+Adj -> 'old' | 'red' | 'happy'
+N -> 'dogs' | 'parks' | 'statues' | 'people'
+V -> 'saw' | 'walk' | 'ate'
+P -> 'in' | 'to' | 'on' | 'under' | 'with'
+S -> VP
+S -> Aux NP VP
+Aux -> 'should' | 'will'
+S -> Who-NP VP
+Who-NP -> 'who'
+S -> Where-NP Aux NP VP
+Where-NP -> 'where'
+S -> What-NP Aux NP V PP | What-NP Aux NP V
+What-NP -> 'what'
