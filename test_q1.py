@@ -20,7 +20,7 @@ def attempt_to_parse(sentence, grammar, should_parse=True):
     print(head_string + '\n')
 
     parser = nltk.parse.BottomUpChartParser(grammar)
-    for tree in parser.parse(sentence):
+    for tree in parser.parse(sentence.split()):
         print(tree)
 
 
@@ -36,7 +36,7 @@ def main():
     attempt_to_parse('walk your dogs', grammar)
 
     attempt_to_parse('who walk their dogs in parks', grammar)
-    attempt_to_parse('what will people walk in parks', grammar)
+    attempt_to_parse('what will people walk their dogs', grammar)
     attempt_to_parse('where should people walk their dogs', grammar)
     attempt_to_parse('should people walk their dogs in parks', grammar)
 
@@ -44,7 +44,7 @@ def main():
     attempt_to_parse('what should people walk their dogs in parks', grammar, should_parse=False)
     attempt_to_parse('where walk their dogs in parks', grammar, should_parse=False)
     
-    
+    attempt_to_parse('where will people walk their dogs in parks', grammar)
 
 if __name__ == '__main__':
     main()
