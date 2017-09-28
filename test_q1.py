@@ -58,7 +58,7 @@ def main():
     attempt_to_parse('where should people walk their dogs in parks', grammar)
     attempt_to_parse('where will people walk their dogs in parks', grammar)
 
-    attempt_to_parse('people saw their dogs to the park', grammar)
+    attempt_to_parse('people saw their dogs to the parks', grammar)
     attempt_to_parse('people ate the dogs to the dogs', grammar)
 
     attempt_to_parse('should people saw the dogs to the dogs', grammar)
