@@ -32,7 +32,7 @@ def main():
     Det -> 'my'
     """)
     sent = 'my dog saw a man in the park with a statue'.split()
-    sr = nltk.ShiftReduceParser(grammar)
+    sr = nltk.parse.BottomUpChartParser(grammar)#ShiftReduceParser(grammar)
     for tree in sr.parse(sent): #.nbest_parse(sent):
         print(tree)
     
