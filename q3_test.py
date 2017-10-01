@@ -107,7 +107,7 @@ def main():
       parse(sentence, grammar, parser)
 
     # Generate random sentence ###
-    for n, sent in enumerate(generate(grammar, n=5), 1):
+    for n, sent in enumerate(nltk.parse.generate(grammar, n=5), 1):
         print('%3d. %s' % (n, ' '.join(sent)))
 
 if __name__ == '__main__':
