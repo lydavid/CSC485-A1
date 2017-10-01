@@ -17,7 +17,7 @@ NMassP -> Det-m NMass | NMass    % MassNoun
 
 NComP -> NComP PP    % recursively modify common noun phrases
 NComP -> Det AdjP | AdjP
-AdjP -> Adj AdjP | Adj NMass | Adj NVowel | AdjConsonant
+AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 
 PP -> P NP
 
