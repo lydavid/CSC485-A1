@@ -1,1 +1,9 @@
 % David Ly, lydavid1, 1001435501
+S -> NP VP % standard sentence structure
+NP -> N | NPrp | NPro % stand-alone noun
+NP -> Det N % the cat, a cat, an elephant
+NP -> Adj NP % allows noun phrases to be modified by an endless string of adjectives
+NP -> NP PP % allows noun phrases to be recursively modified by prepositions
+VP -> V % stand-alone verb, should be intransitive
+VP -> Adv VP | VP Adv % allows adverbs to modify verb phrases
+PP -> P NP % typical prepositional phrase
