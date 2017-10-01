@@ -25,6 +25,27 @@ def parse(sentence, grammar, parser, should_parse=True):
     for tree in parser.parse_all(sentence.split()):
         print(tree)
 
+def strip_comments(string):
+
+    # Break str up into individual lines
+    lines = string.split('/n')
+
+    # Remove all text after %
+    stripped_lines = []
+    for line in lines:
+        head, sep, tail = line.partition('%')
+        stripped_lines.append(head)
+
+    # Remerge the list of strings into a single string, adding back in newline to separate lines
+    # Do no add back lines that are now the empty string (ie were entirely a comment line)
+    stripped_string = ''
+    for line in stripped_lines:
+        if line != '':
+            stripped_string = string_string + line + '\n'
+
+    return stripped_string
+
+
 
 def main():
 
@@ -36,8 +57,10 @@ def main():
     with open('Lexicon', 'r') as afile:
         cfg_string = cfg_string + '\n' + afile.read()
 
+    commentless_cdf_string = strip_comments(cfg_string)
+
     # Build our grammar for testing
-    grammar = nltk.grammar.CFG.fromstring(cfg_string)
+    grammar = nltk.grammar.CFG.fromstring(commentless_cdf_string)
 
     # Select our parser
     parser = nltk.parse.BottomUpChartParser(grammar)
