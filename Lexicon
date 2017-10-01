@@ -1,5 +1,6 @@
 % David Ly, lydavid1, 1001435501
 
+Det -> 'the' | 'my'            % typical determiners, able to be used everywhere in our grammar
 Det-m -> 'the' | 'my'          % determiners for mass nouns
 Det-v -> 'the' | 'my' | 'an'   % determiners for vowel sound count nouns
 Det-c -> 'the' | 'my' | 'a'    % determiners for consonant sound count nouns

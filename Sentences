@@ -36,8 +36,21 @@ my cheese arrived
 *an fur arrived
 
 % S -> CommmonNounPhrase (CommonNounPhrase PP) IntransitiveVerbPhrase
-%the cat with the fur ate
-%the cat with fur ate
+the cat with the fur ate
+the cat with fur ate
 	% fur is uncountable in this context
 	% the only countable version of fur is used like this: elegant ladies in furs
+
+the soft cat left
+handsome rutabaga ate
+
+long soft cheese arrived
+my long soft cheese arrived
+the long soft cheese arrived
+*long soft cat arrived
+the long soft cat arrived
+my long soft cat arrived
+*a long soft cat arrived % this technically makes sense, but don't ponder on this too much, doesn't seem to be an examples like this
+*an long soft elephant arrived
+the long soft elephant arrived
 

@@ -15,7 +15,11 @@ NConsonantP -> Det-c NConsonant    % ConsonantSoundNoun
 
 NMassP -> Det-m NMass | NMass    % MassNoun
 
+NComP -> NComP PP    % recursively modify common noun phrases
+NComP -> Det AdjP | AdjP
+AdjP -> Adj AdjP | Adj NMass | Adj NVowel | AdjConsonant
 
+PP -> P NP
 
 
 
@@ -24,12 +28,7 @@ VP -> V NP     % for a simple transitive verb
 
 
 %Assignment 3.6.1 Grammar file example
-%S -> NP VP
-%NP -> NPrp
-%NP -> Det N
-%VP -> V | V NP
 %VP -> V NP PP
-%PP -> P NP
 
 
 
