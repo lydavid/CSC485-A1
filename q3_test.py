@@ -28,7 +28,7 @@ def parse(sentence, grammar, parser, should_parse=True):
 def strip_comments(string):
 
     # Break str up into individual lines
-    lines = string.split('/n')
+    lines = string.split('\n')
 
     # Remove all text after %
     stripped_lines = []
@@ -41,7 +41,7 @@ def strip_comments(string):
     stripped_string = ''
     for line in stripped_lines:
         if line != '':
-            stripped_string = string_string + line + '\n'
+            stripped_string = stripped_string + line + '\n'
 
     return stripped_string
 
