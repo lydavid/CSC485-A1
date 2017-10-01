@@ -15,3 +15,7 @@ NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronoun
 NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 
 V -> 'left' | 'ate' | 'arrived'    % verbs [divide it into intransitive/transitive eventually]
+
+Adj -> 'handsome' | 'tall' | 'long' | 'soft'
+
+P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'
