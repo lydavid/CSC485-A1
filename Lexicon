@@ -19,3 +19,5 @@ V -> 'left' | 'ate' | 'arrived'    % verbs [divide it into intransitive/transiti
 Adj -> 'handsome' | 'tall' | 'long' | 'soft'
 
 P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'
+
+Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'
