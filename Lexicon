@@ -14,7 +14,7 @@ NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'    % proper nouns
 NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
 NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 
-V -> 'left' | 'ate' | 'arrived'    % verbs [divide it into intransitive/transitive eventually]
+V -> 'left' | 'ate' | 'arrived' | 'jumped'    % verbs [divide it into intransitive/transitive eventually]
 
 Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                      % adjectives
 P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'    % prepositions
