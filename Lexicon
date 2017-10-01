@@ -11,4 +11,4 @@ V -> 'left' | 'ate' | 'arrived'
 
 P -> 'with'
 
-Adv -> 'immediately'
+Adv -> 'immediately' | 'slowly'

@@ -48,19 +48,21 @@ def strip_comments(string):
 
 
 def main():
-
+    
+    #cfg_string = ''
     # Import grammar from Grammar file
     with open('Grammar', 'r') as afile:
-        cfg_string = afile.read()
+        cfg_grammar = afile.read()
 
     # Import lexicon from Lexicon file and append it to our string
     with open('Lexicon', 'r') as afile:
-        cfg_string = cfg_string + '\n' + afile.read()
-
-    commentless_cdf_string = strip_comments(cfg_string)
-
+        cfg_lexicon =  afile.read()
+    cfg_string = cfg_grammar + '\n' + cfg_lexicon
+    print(cfg_string)
+    commentless_cfg_string = strip_comments(cfg_string)
+    print(commentless_cfg_string)
     # Build our grammar for testing
-    grammar = nltk.grammar.CFG.fromstring(commentless_cdf_string)
+    grammar = nltk.grammar.CFG.fromstring(commentless_cfg_string)
 
     # Select our parser
     parser = nltk.parse.BottomUpChartParser(grammar)
