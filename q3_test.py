@@ -51,13 +51,13 @@ def main():
 
 
     ### Test every line in a file ###
-    print('\nA1-test.txt\n')
-    with open('A1-test.txt', 'r') as afile:
-        sentences = afile.read()
+    # print('\nA1-test.txt\n')
+    # with open('A1-test.txt', 'r') as afile:
+    #     sentences = afile.read()
 
-    sentence_list = sentences.split('\n')
-    for sentence in sentence_list:
-    	parse(sentence, grammar, parser)
+    # sentence_list = sentences.split('\n')
+    # for sentence in sentence_list:
+    # 	parse(sentence, grammar, parser)
 
 if __name__ == '__main__':
     main()

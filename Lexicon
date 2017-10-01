@@ -1,1 +1,12 @@
 % David Ly, lydavid1, 1001435501
+Det -> 'a' | 'an' | 'the'
+
+Adj -> 'long' | 'soft' | 'tall'
+
+N -> 'cat' | 'fur'
+NPrp -> 'Nadia'
+NPro -> 'she' | 'her'
+
+V -> 'left' | 'ate' | 'arrived'
+
+P -> 'with'
