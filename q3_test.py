@@ -120,33 +120,31 @@ def main():
     brief_grammar_string = commentless_grammar_string + '\n' + brief_lexicon_string
     brief_grammar = nltk.grammar.CFG.fromstring(brief_grammar_string)
 
+    # allow for multiple samples
+    for x in range(0,9):
     
-    # Generate a random depth
-    d = random.randint(4,7)
-    # Get the number of sentences with that depth
-    s_len = len(list(generate(brief_grammar, depth=d)))
+        # Generate a random depth
+        d = random.randint(4,7)
+        # Get the number of sentences with that depth
+        s_len = len(list(generate(brief_grammar, depth=d)))
 
-    # number of sentences to generate
-    num_sentences = 10
-    # Get a random offset
-    offset = random.randint(0, s_len - num_sentences)
+        # number of sentences to generate
+        num_sentences = 1
+        # Get a random offset
+        offset = random.randint(0, s_len - num_sentences)
 
-    # print out only the sentences starting from the offset
-    inc = 0
-    for sentence in generate(brief_grammar, depth=d):
-        if inc >= offset:
-            print(' '.join(sentence))
+        # print out only the sentences starting from the offset
+        inc = 0
+        for sentence in generate(brief_grammar, depth=d):
+            if inc >= offset:
+                print(' '.join(sentence))
 
-        inc = inc + 1
+            inc = inc + 1
 
-        # return after we pass the number of sentences to print
-        if inc > offset + num_sentences:
-            return
+            # return after we pass the number of sentences to print
+            if inc >= offset + num_sentences:
+                break
 
-    # the above is incredibly slow, especially for high depth
-    # to speed up the process, and because interchangeable words don't do anything for us cause we're testing grammar
-    # make an alternate lexicon with only 1 word per category
-    # or simply partition on '|'
 
     #for sentence in generate(grammar, n=10):
     #    print(' '.join(sentence))
