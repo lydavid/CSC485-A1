@@ -1,9 +1,60 @@
 % David Ly, lydavid1, 1001435501
-S -> NP VP % standard sentence structure
-NP -> N | NPrp | NPro % stand-alone noun
-NP -> Det N % the cat, a cat, an elephant
-NP -> Adj NP % allows noun phrases to be modified by an endless string of adjectives
-NP -> NP PP % allows noun phrases to be recursively modified by prepositions
-VP -> V % stand-alone verb, should be intransitive
-VP -> Adv VP | VP Adv % allows adverbs to modify verb phrases
-PP -> P NP % typical prepositional phrase
+
+% Top level sentence structures
+S -> NP VP
+S -> NPro_s VP
+
+NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
+
+NPrpP -> NPro    % ProperNoun
+NComP -> NCountP | NMassP    % CountNounPhrase | MassNounPhrase
+
+NCountP -> NVowelP | NConsonantP    % VowelSoundNounPhrase | ConsonantSoundNounPhrase
+NVowelP -> Det-v NVowel    % VowelSoundNoun
+NConsonantP -> Det-c NConsonant    % ConsonantSoundNoun
+
+NMassP -> Det-m NMass | NMass    % MassNoun
+
+
+
+
+
+VP -> V    % for a simple intransitive verb
+VP -> V NP     % for a simple transitive verb
+
+
+%Assignment 3.6.1 Grammar file example
+%S -> NP VP
+%NP -> NPrp
+%NP -> Det N
+%VP -> V | V NP
+%VP -> V NP PP
+%PP -> P NP
+
+
+
+
+
+
+%%% Earlier attempts %%%
+%NP -> N | NPrp | NPro % stand-alone noun
+
+% common nouns, can attach PP to them
+%NP -> N-com | N-pro % common nouns | pronouns & proper nouns
+
+%N-com -> 
+
+
+% pronouns and proper nouns, cannot attach PP to them according to spec: even though 'I saw Nadia at the park' makes sense
+
+
+%NP -> Det N % the cat, a cat, an elephant
+%NP -> Adj NP % allows noun phrases to be modified by an endless string of adjectives
+
+%NP -> NP PP % allows noun phrases to be recursively modified by prepositions
+%NP -> 
+
+
+%VP -> V % stand-alone verb, should be intransitive
+%VP -> Adv VP | VP Adv % allows adverbs to modify verb phrases
+%PP -> P NP % typical prepositional phrase

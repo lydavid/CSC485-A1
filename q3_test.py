@@ -11,7 +11,16 @@ import nltk
 
 def parse(sentence, grammar, parser, should_parse=True):
 
+    if len(sentence) == 0:
+        return
+
     print()
+
+    # Preliminary step, added to account for sentences that begins with *
+    # Strip the *, and set should_parse to False
+    if sentence[0] == '*':
+        sentence = sentence[1:]
+        should_parse = False
 
     head_string = '\n(' + sentence + ')'
     if should_parse:
@@ -68,21 +77,35 @@ def main():
     parser = nltk.parse.BottomUpChartParser(grammar)
 
     ### Tests for 3.1 ###
-    parse('Nadia left immediately', grammar, parser)
-    parse('the cat with the long soft fur slowly ate', grammar, parser)
+    #parse('Nadia left immediately', grammar, parser)
+    #parse('the cat with the long soft fur slowly ate', grammar, parser)
     parse('she arrived', grammar, parser)
-    parse('Nadia with the long soft fur slowly ate', grammar, parser, False)
-    parse('the cat with the tall her arrived', grammar, parser, False)
+    #parse('Nadia with the long soft fur slowly ate', grammar, parser, False)
+    #parse('the cat with the tall her arrived', grammar, parser, False)
 
 
-    ### Test every line in a file ###
+    ### Test every test sentences provided for us ###
     # print('\nA1-test.txt\n')
     # with open('A1-test.txt', 'r') as afile:
     #     sentences = afile.read()
 
+    # sentences = strip_comments(sentences)
+
     # sentence_list = sentences.split('\n')
     # for sentence in sentence_list:
     # 	parse(sentence, grammar, parser)
+
+    ### Test every of our own sentences ###
+    print('\nSentences\n')
+    with open('Sentences', 'r') as afile:
+        sentences = afile.read()
+
+    sentences = strip_comments(sentences)
+
+    sentence_list = sentences.split('\n')
+    for sentence in sentence_list:
+      parse(sentence, grammar, parser)
+
 
 if __name__ == '__main__':
     main()

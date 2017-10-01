@@ -1,0 +1,43 @@
+
+
+
+
+
+% 'before' can be used in the following ways:
+%   as a conjunction (connecting two clauses):
+%     Think carefully before you choose.
+%   as a preposition (followed by a noun):
+%     We moved to London before the war.
+%   as an adverb (without a following noun):
+%     I’d met him once before.
+
+% similarly for 'after'
+% this assignment might only use it as a preposition
+
+
+% most likely will not use particles or phrasal verbs (I <went on> for some days cutting timber)
+
+%%% Test mass/count nouns agreement with articles %%%
+% S -> CommonNounPhrase IntransitiveVerbPhrase
+the cat arrived
+a cat arrived
+my cat arrived
+*cat arrived
+
+an elephant left
+the eggplant arrived
+the autoclave ate
+*a elephant arrived
+
+the fur arrived
+rutabaga arrived
+my cheese arrived
+*a fur arrived
+*an fur arrived
+
+% S -> CommmonNounPhrase (CommonNounPhrase PP) IntransitiveVerbPhrase
+%the cat with the fur ate
+%the cat with fur ate
+	% fur is uncountable in this context
+	% the only countable version of fur is used like this: elegant ladies in furs
+

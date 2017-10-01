@@ -1,14 +1,16 @@
 % David Ly, lydavid1, 1001435501
-Det -> 'a' | 'an' | 'the'
 
-Adj -> 'long' | 'soft' | 'tall'
+Det-m -> 'the' | 'my'          % determiners for mass nouns
+Det-v -> 'the' | 'my' | 'an'   % determiners for vowel sound count nouns
+Det-c -> 'the' | 'my' | 'a'    % determiners for consonant sound count nouns
 
-N -> 'cat' | 'fur'
-NPrp -> 'Nadia'
-NPro -> 'she' | 'her'
+NMass -> 'fur' | 'rutabaga' | 'cheese' | 'autopoiesis'                        % mass nouns
+NVowel -> 'eggplant' | 'autoclave' | 'elephant'                               % vowel sound count nouns
+NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft'    % consonant sound count nouns
 
-V -> 'left' | 'ate' | 'arrived'
+NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'    % proper nouns
 
-P -> 'with'
+NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
+NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 
-Adv -> 'immediately' | 'slowly'
+V -> 'left' | 'ate' | 'arrived'    % verbs [divide it into intransitive/transitive eventually]
