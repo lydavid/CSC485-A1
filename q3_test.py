@@ -108,8 +108,39 @@ def main():
 
     # Generate random sentence ###
     from nltk.parse.generate import generate
-    for sentence in generate(grammar, n=10):
-        print(' '.join(sentence))
+    import random
+
+    len(list(generate(grammar, depth=3)))
+    len(list(generate(grammar, depth=4)))
+    len(list(generate(grammar, depth=5)))
+    len(list(generate(grammar, depth=6)))
+    len(list(generate(grammar, depth=7)))
+
+    # Generate a random depth
+    d = random.randint(4,7)
+    # Get the number of sentences with that depth
+    s_len = len(list(generate(grammar, depth=d)))
+
+    # number of sentences to generate
+    num_sentences = 10
+    # Get a random offset
+    offset = random.randint(0, s_len - num_sentences)
+
+    # print out only the sentences starting from the offset
+    inc = 0
+    for sentence in generate(grammar, depth=d):
+        if inc >= offset:
+            print(' '.join(sentence))
+
+        inc = inc + 1
+
+        # return after we pass the number of sentences to print
+        if inc > offset + num_sentences:
+            return
+
+
+    #for sentence in generate(grammar, n=10):
+    #    print(' '.join(sentence))
 
 if __name__ == '__main__':
     main()
