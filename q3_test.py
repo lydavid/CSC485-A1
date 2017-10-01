@@ -34,7 +34,7 @@ def parse(sentence, grammar, parser, should_parse=True):
     for tree in parser.parse_all(sentence.split()):
         print(tree)
 
-def strip_comments(string):
+def strip_comments(string, symbol='%'):
 
     # Break str up into individual lines
     lines = string.split('\n')
@@ -42,7 +42,7 @@ def strip_comments(string):
     # Remove all text after %
     stripped_lines = []
     for line in lines:
-        head, sep, tail = line.partition('%')
+        head, sep, tail = line.partition(symbol)
         stripped_lines.append(head)
 
     # Remerge the list of strings into a single string, adding back in newline to separate lines
@@ -67,9 +67,9 @@ def main():
     with open('Lexicon', 'r') as afile:
         cfg_lexicon =  afile.read()
     cfg_string = cfg_grammar + '\n' + cfg_lexicon
-    print(cfg_string)
+
     commentless_cfg_string = strip_comments(cfg_string)
-    print(commentless_cfg_string)
+
     # Build our grammar for testing
     grammar = nltk.grammar.CFG.fromstring(commentless_cfg_string)
 
@@ -106,20 +106,24 @@ def main():
     for sentence in sentence_list:
       parse(sentence, grammar, parser)
 
-    # Generate random sentence ###
+
+
+    ### Generate random sentence ###
     from nltk.parse.generate import generate
     import random
 
-    len(list(generate(grammar, depth=3)))
-    len(list(generate(grammar, depth=4)))
-    len(list(generate(grammar, depth=5)))
-    len(list(generate(grammar, depth=6)))
-    len(list(generate(grammar, depth=7)))
 
+
+    commentless_grammar_string = strip_comments(cfg_grammar)
+    brief_lexicon_string = strip_comments(cfg_lexicon, '|')
+    brief_grammar_string = commentless_grammar_string + '\n' + brief_lexicon_string
+    brief_grammar = nltk.grammar.CFG.fromstring(brief_grammar_string)
+
+    
     # Generate a random depth
     d = random.randint(4,7)
     # Get the number of sentences with that depth
-    s_len = len(list(generate(grammar, depth=d)))
+    s_len = len(list(generate(brief_grammar, depth=d)))
 
     # number of sentences to generate
     num_sentences = 10
@@ -128,7 +132,7 @@ def main():
 
     # print out only the sentences starting from the offset
     inc = 0
-    for sentence in generate(grammar, depth=d):
+    for sentence in generate(brief_grammar, depth=d):
         if inc >= offset:
             print(' '.join(sentence))
 
@@ -138,6 +142,10 @@ def main():
         if inc > offset + num_sentences:
             return
 
+    # the above is incredibly slow, especially for high depth
+    # to speed up the process, and because interchangeable words don't do anything for us cause we're testing grammar
+    # make an alternate lexicon with only 1 word per category
+    # or simply partition on '|'
 
     #for sentence in generate(grammar, n=10):
     #    print(' '.join(sentence))
