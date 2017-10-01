@@ -10,3 +10,5 @@ NPro -> 'she' | 'her'
 V -> 'left' | 'ate' | 'arrived'
 
 P -> 'with'
+
+Adv -> 'immediately'
