@@ -115,7 +115,8 @@ def main():
 
 
     commentless_grammar_string = strip_comments(cfg_grammar)
-    brief_lexicon_string = strip_comments(cfg_lexicon, '|')
+    brief_lexicon_string = strip_comments(cfg_lexicon)
+    brief_lexicon_string = strip_comments(brief_lexicon_string, '|')
     brief_grammar_string = commentless_grammar_string + '\n' + brief_lexicon_string
     brief_grammar = nltk.grammar.CFG.fromstring(brief_grammar_string)
 
