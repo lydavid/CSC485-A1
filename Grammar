@@ -27,6 +27,9 @@ VP -> V    % for a simple intransitive verb
 VP -> V NP     % for a simple transitive verb
 
 
+VP -> Adv VP | VP Adv   % adverbs before verb phrase and after
+
+
 %Assignment 3.6.1 Grammar file example
 %VP -> V NP PP
 
