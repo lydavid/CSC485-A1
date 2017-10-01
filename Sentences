@@ -41,6 +41,7 @@ the cat with fur ate
 	% fur is uncountable in this context
 	% the only countable version of fur is used like this: elegant ladies in furs
 
+% Adjective tests
 the soft cat left
 handsome rutabaga ate
 
@@ -53,6 +54,10 @@ my long soft cat arrived
 *a long soft cat arrived % this technically makes sense, but don't ponder on this too much, doesn't seem to be an examples like this
 *an long soft elephant arrived
 the long soft elephant arrived
+
+*handsome Nadia arrived
+*the handsome Nadia arrived
+*soft I arrived
 
 % Adverb tests
 I slowly ate

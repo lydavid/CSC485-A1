@@ -6,7 +6,7 @@ S -> NPro_s VP
 
 NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
 
-NPrpP -> NPro    % ProperNoun
+NPrpP -> NPrp    % ProperNoun
 NComP -> NCountP | NMassP    % CountNounPhrase | MassNounPhrase
 
 NCountP -> NVowelP | NConsonantP    % VowelSoundNounPhrase | ConsonantSoundNounPhrase
