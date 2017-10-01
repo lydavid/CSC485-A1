@@ -48,7 +48,7 @@ handsome rutabaga ate
 long soft cheese arrived
 my long soft cheese arrived
 the long soft cheese arrived
-*long soft cat arrived % 'long soft cats arrived' makes sense, but not this -> probably don't need to deal with though
+long soft cat arrived % 'long soft cats arrived' makes sense, but not this -> probably don't need to deal with though
 the long soft cat arrived
 my long soft cat arrived
 *a long soft cat arrived % this technically makes sense, but don't ponder on this too much, doesn't seem to be an examples like this
@@ -67,3 +67,8 @@ she slowly left immediately % makes no sense, but we allow for it
 
 % More P tests
 the cat with the long soft fur ate slowly
+
+% from bb
+the cat jumped with the tall cat
+the cat jumped with the tall cat immediately
+

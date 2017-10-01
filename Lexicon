@@ -16,8 +16,6 @@ NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 
 V -> 'left' | 'ate' | 'arrived'    % verbs [divide it into intransitive/transitive eventually]
 
-Adj -> 'handsome' | 'tall' | 'long' | 'soft'
-
-P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'
-
-Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'
+Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                      % adjectives
+P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'    % prepositions
+Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                 % adverbs

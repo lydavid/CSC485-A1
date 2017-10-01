@@ -4,6 +4,10 @@
 S -> NP VP
 S -> NPro_s VP
 
+% reorganize like: S -> NP_s VP, VP -> V NP_o
+% NP_s -> NPro_s | NPrpP | NComP
+% NP_o -> NPro_o | NPrpP | NComP
+
 NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
 
 NPrpP -> NPrp    % ProperNoun

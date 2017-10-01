@@ -106,6 +106,9 @@ def main():
     for sentence in sentence_list:
       parse(sentence, grammar, parser)
 
+    # Generate random sentence ###
+    for n, sent in enumerate(generate(grammar, n=5), 1):
+        print('%3d. %s' % (n, ' '.join(sent)))
 
 if __name__ == '__main__':
     main()
