@@ -11,9 +11,9 @@ import nltk
 
 def parse(sentence, grammar, parser, should_parse=True):
 
-	print()
+    print()
 
-	head_string = '\n(' + sentence + ')'
+    head_string = '\n(' + sentence + ')'
     if should_parse:
         head_string = head_string + ' (Should parse)'
     else:
@@ -28,12 +28,12 @@ def parse(sentence, grammar, parser, should_parse=True):
 
 def main():
 
-	# Import grammar from Grammar file
-	with open('Grammar', 'r') as afile:
+    # Import grammar from Grammar file
+    with open('Grammar', 'r') as afile:
         cfg_string = afile.read()
 
-	# Import lexicon from Lexicon file and append it to our string
-	with open('Lexicon', 'r') as afile:
+    # Import lexicon from Lexicon file and append it to our string
+    with open('Lexicon', 'r') as afile:
         cfg_string = cfg_string + '\n' + afile.read()
 
     # Build our grammar for testing
