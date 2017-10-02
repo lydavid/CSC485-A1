@@ -1,12 +1,13 @@
 % David Ly, lydavid1, 1001435501
 
 % Top level sentence structures
-S -> NP VP
-S -> NPro_s VP
+%S -> NP VP
+%S -> NPro_s VP
 
+S -> NP_s
 % reorganize like: S -> NP_s VP, VP -> V NP_o
-% NP_s -> NPro_s | NPrpP | NComP
-% NP_o -> NPro_o | NPrpP | NComP
+NP_s -> NPro_s | NPrpP | NComP
+NP_o -> NPro_o | NPrpP | NComP
 
 NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
 
@@ -23,15 +24,16 @@ NComP -> NComP PP    % recursively modify common noun phrases
 NComP -> Det AdjP | AdjP
 AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 
-PP -> P NP
+PP -> P NP_o
 
 
 
 VP -> V    % for a simple intransitive verb
-VP -> V NP     % for a simple transitive verb
-
+VP -> V NP_s     % for a simple transitive verb
 
 VP -> Adv VP | VP Adv   % adverbs before verb phrase and after
+
+
 
 
 %Assignment 3.6.1 Grammar file example
