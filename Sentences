@@ -78,4 +78,14 @@ the cat jumped with the tall cat immediately
 % subject/object in the right place
 I ate the rutabaga
 *her ate the rutabaga
-*She fondled I
+*she jumped I
+
+
+%%% Auxiliary System Tests %%%
+Nadia will leave
+%Nadia has left
+%Nadia may have been leaving
+*Nadia will left
+%*Nadia has could leave
+%*Nadia has had left
+

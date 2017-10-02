@@ -4,12 +4,12 @@
 %S -> NP VP
 %S -> NPro_s VP
 
-S -> NP_s
+S -> NP_s VP
 % reorganize like: S -> NP_s VP, VP -> V NP_o
 NP_s -> NPro_s | NPrpP | NComP
 NP_o -> NPro_o | NPrpP | NComP
 
-NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
+%NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
 
 NPrpP -> NPrp    % ProperNoun
 NComP -> NCountP | NMassP    % CountNounPhrase | MassNounPhrase
@@ -27,9 +27,19 @@ AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 PP -> P NP_o
 
 
+% reorganize: VP -> Vi, VP -> Vi PP (Vi = IntransitiveVerb)
+VP -> Vi-pp    % for a simple intransitive verb
+VP -> Vi-pp PP
 
-VP -> V    % for a simple intransitive verb
-VP -> V NP_s     % for a simple transitive verb
+%%% Auxiliary System For Intransitive Verbs %%%
+VP -> AuxModal Vi | AuxModal Vi PP
+%VP -> AuxPerfect 
+
+
+% reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)
+% Mono and ditransitive verb structures 
+%VP -> V NP_o     % for a simple transitive verb
+%VP -> V NP_o PP
 
 VP -> Adv VP | VP Adv   % adverbs before verb phrase and after
 
