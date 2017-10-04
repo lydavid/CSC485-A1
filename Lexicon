@@ -11,16 +11,45 @@ NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft' | 'ru
 
 NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'    % proper nouns
 
-NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
+%NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
+NPro_s-non3 -> 'I' | 'we' | 'they' | 'you'    % subject pronouns, non-3rd-person (they is questionable here but fits when using have [they have]) -> uses have/had
+NPro_s-3 -> 'he' | 'she' | 'it'               % subject pronouns, 3rd-person -> uses has/had
 NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 
 % Intransitive Verbs
-Vi -> 'leave' | 'eat' | 'arrive' | 'jump'
-Vi-pp -> 'left' | 'ate' | 'arrived' | 'jumped'    % verbs [divide it into intransitive/transitive eventually]
+%Vi -> 'leave' | 'eat' | 'arrive' | 'jump'         % intransitive verbs (simple present)
+%Vi-sp -> 'left' | 'ate' | 'arrived' | 'jumped'    % intransitive verbs (simple past)
+%Vi-gp -> 'leaving' | 'eating' | 'arriving' | 'jumping' % intransitive verbs (gerundive participle)
+%Vi-pp -> 'left' | 'eaten' | 'arrived' | 'jumped'  % intransitive verbs (past participle)
+
+% Mono-Transitive Verbs
+%Vm -> 'leave'
+%Vm-pp -> 'left' % transitive verbs (past participle) - used in 3.2 for passive constructions
+
+% Di-Transitive Verbs
+%Vd -> 'give'
+
+
+Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help'
+Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped'
+Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped'
+Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping'
+
+Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give'
+Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave'
+Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
+
+Vd -> 'bring' | 'tell' | 'give'
+Vd-sp -> 'brought' | 'told' | 'gave'
+Vd-pp -> 'brought' | 'told' | 'given'
+
+
 
 Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                      % adjectives
 P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'    % prepositions
 Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                 % adverbs
 
 AuxModal -> 'can' | 'may' | 'could' | 'should' | 'might' | 'must' | 'would' | 'will'    % auxiliary verbs (modal)
+AuxPerfect-non3 -> 'have' | 'had'
+AuxPerfect-3 -> 'has' | 'had'
 

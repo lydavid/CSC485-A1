@@ -1,12 +1,17 @@
 % David Ly, lydavid1, 1001435501
 
-% Top level sentence structures
+% Sentence-level structures
 %S -> NP VP
 %S -> NPro_s VP
 
-S -> NP_s VP
-% reorganize like: S -> NP_s VP, VP -> V NP_o
-NP_s -> NPro_s | NPrpP | NComP
+S -> NP_s-non3 VP-non3
+S -> NP_s-3 VP-3
+% reorganize like: S -> NP_s-non3 VP-non3, S-> NP_s-3 VP-3
+%NP_s -> NPro_s 
+
+NP_s-non3 -> NPro_s-non3              % only includes I, you, we, they
+NP_s-3 -> NPro_s-3 | NPrpP | NComP    % everything else
+
 NP_o -> NPro_o | NPrpP | NComP
 
 %NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
@@ -27,13 +32,18 @@ AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 PP -> P NP_o
 
 
-% reorganize: VP -> Vi, VP -> Vi PP (Vi = IntransitiveVerb)
-VP -> Vi-pp    % for a simple intransitive verb
-VP -> Vi-pp PP
+% Verb Phrases using intransitive verbs in simple past tense
+VP-non3 -> Vi-sp
+VP-non3 -> Vi-sp PP
+VP-3 -> Vi-sp
+VP-3 -> Vi-sp PP
 
-%%% Auxiliary System For Intransitive Verbs %%%
-VP -> AuxModal Vi | AuxModal Vi PP
-%VP -> AuxPerfect 
+% Auxiliary System For Intransitive Verbs
+VP-non3 -> AuxModal Vi | AuxModal Vi PP
+VP-non3 -> AuxPerfect-non3 Vi-pp
+
+VP-3 -> AuxModal Vi | AuxModal Vi PP
+VP-3 -> AuxPerfect-3 Vi-pp
 
 
 % reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)
@@ -41,8 +51,8 @@ VP -> AuxModal Vi | AuxModal Vi PP
 %VP -> V NP_o     % for a simple transitive verb
 %VP -> V NP_o PP
 
-VP -> Adv VP | VP Adv   % adverbs before verb phrase and after
-
+VP-non3 -> VP-non3 Adv   % adverbs before verb phrase and after -> before verb doesn't always make sense [VP -> Adv VP]
+VP-3 -> VP-3 Adv
 
 
 
