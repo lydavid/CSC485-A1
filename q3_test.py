@@ -124,7 +124,7 @@ def main():
     for x in range(0,9):
     
         # Generate a random depth
-        d = random.randint(4,7)
+        d = random.randint(5,7)
         # Get the number of sentences with that depth
         s_len = len(list(generate(brief_grammar, depth=d)))
 

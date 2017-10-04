@@ -11,9 +11,9 @@ NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft' | 'ru
 
 NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'    % proper nouns
 
-%NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
-NPro_s-non3 -> 'I' | 'we' | 'they' | 'you'    % subject pronouns, non-3rd-person (they is questionable here but fits when using have [they have]) -> uses have/had
-NPro_s-3 -> 'he' | 'she' | 'it'               % subject pronouns, 3rd-person -> uses has/had
+NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
+%NPro_s-non3 -> 'I' | 'we' | 'they' | 'you'    % subject pronouns, non-3rd-person (they is questionable here but fits when using have [they have]) -> uses have/had
+%NPro_s-3 -> 'he' | 'she' | 'it'               % subject pronouns, 3rd-person -> uses has/had
 NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 
 % Intransitive Verbs
