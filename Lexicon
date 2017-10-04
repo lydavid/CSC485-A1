@@ -1,70 +1,29 @@
 % David Ly, lydavid1, 1001435501
 
-Det -> 'the' | 'my'            % typical determiners, able to be used everywhere in our grammar
-Det-m -> 'the' | 'my'          % determiners for mass nouns
-Det-v -> 'the' | 'my' | 'an'   % determiners for vowel sound count nouns
-Det-c -> 'the' | 'my' | 'a'    % determiners for consonant sound count nouns
+Det -> 'the' | 'my'                                                                        % typical determiners, able to be used everywhere in our grammar
+Det-m -> 'the' | 'my'                                                                      % determiners for mass nouns
+Det-v -> 'the' | 'my' | 'an'                                                               % determiners for vowel sound count nouns
+Det-c -> 'the' | 'my' | 'a'                                                                % determiners for consonant sound count nouns
 
 NMass -> 'fur' | 'cheese' | 'autopoiesis' | 'menu' | 'help'                                % mass nouns
-NVowel -> 'eggplant' | 'autoclave' | 'elephant'                                            % vowel sound count nouns
-NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft' | 'rutabaga'    % consonant sound count nouns
+NVowel -> 'eggplant' | 'autoclave' | 'elephant'                                            % vowel-sound count nouns
+NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft' | 'rutabaga'    % consonant-sound count nouns
 
-NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'    % proper nouns
+NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'                                         % proper nouns
 
-NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'    % subject pronouns
-%NPro_s-non3 -> 'I' | 'we' | 'they' | 'you'    % subject pronouns, non-3rd-person (they is questionable here but fits when using have [they have]) -> uses have/had
-%NPro_s-3 -> 'he' | 'she' | 'it'               % subject pronouns, 3rd-person -> uses has/had
-NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
+NPro_s -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'                                % subject pronouns
+NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'                                     % object pronouns
 
-% Intransitive Verbs
-%Vi -> 'leave' | 'eat' | 'arrive' | 'jump'         % intransitive verbs (simple present)
-%Vi-sp -> 'left' | 'ate' | 'arrived' | 'jumped'    % intransitive verbs (simple past)
-%Vi-gp -> 'leaving' | 'eating' | 'arriving' | 'jumping' % intransitive verbs (gerundive participle)
-%Vi-pp -> 'left' | 'eaten' | 'arrived' | 'jumped'  % intransitive verbs (past participle)
+Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                               % adjectives
+P -> 'with' | 'for' | 'on' | 'onto' | 'to' | 'of' | 'from' | 'before' | 'after'            % prepositions
+Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                          % adverbs
 
-% Mono-Transitive Verbs
-%Vm -> 'leave'
-%Vm-pp -> 'left' % transitive verbs (past participle) - used in 3.2 for passive constructions
+AuxModal -> 'can' | 'may' | 'could' | 'should' | 'might' | 'must' | 'would' | 'will'       % auxiliary verbs (modal)
+AuxPerfect -> 'have' | 'had' | 'has'                                                       % auxiliary verbs (perfect have)
+AuxProgressive -> 'are' | 'were' | 'is' | 'was' | 'am'                                     % auxiliary verbs (progressive be)
+AuxPassive -> 'are' | 'were' | 'is' | 'was' | 'am'                                         % auxiliary verbs (passive be)
 
-% Di-Transitive Verbs
-%Vd -> 'give'
-
-
-Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help' | 'demand'
-Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
-Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
-Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping' | 'demanding'
-Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'win' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give' | 'have'
-Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave' | 'had'
-Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
-Vd -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
-Vd-sp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
-Vd-pp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'given'
-
-V-was -> 'was' | 'were'
-
-
-Vm-sp-that -> 'told' | 'believed' | 'saw' | 'reminded' % possibly 'demanded' (but its structure is slightly different [I demanded that Nadia eat vs I demanded that Nadia ate])
-Vd-sp-that -> 'told' | 'reminded'
-Vm-sp-to -> 'left' | 'wanted' | 'demanded' | 'had'
-Vd-sp-to -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
-Vm-to -> 'leave' | 'want' | 'demand' | 'have'
-Vd-to -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
-
-
-
-
-
-
-Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                       % adjectives
-P -> 'with' | 'for' | 'on' | 'onto' | 'to' | 'of' | 'from' | 'before' | 'after'    % prepositions
-Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                  % adverbs
-
-AuxModal -> 'can' | 'may' | 'could' | 'should' | 'might' | 'must' | 'would' | 'will'    % auxiliary verbs (modal)
-AuxPerfect -> 'have' | 'had' | 'has'
-AuxProgressive -> 'are' | 'were' | 'is' | 'was' | 'am'
-AuxPassive -> 'are' | 'were' | 'is' | 'was' | 'am'
-
+% combinations of auxiliary verbs
 AuxModalPerfect -> 'have'
 AuxModalProgressive -> 'be'
 AuxModalPassive -> 'be'
@@ -74,3 +33,30 @@ AuxProgressivePassive -> 'being'
 
 RelativePronoun -> 'that'
 ParticleTo -> 'to'
+
+% Intransitive Verbs [Vi (bare stem), Vi-sp (simple past), Vi-pp (past participle), Vi-gp (gerundive participle)]
+Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help' | 'demand'
+Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
+Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
+Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping' | 'demanding'
+
+% Monotransitive Verbs [Vm (bare stem), Vm-sp (simple past), Vm-pp (past participle)]
+Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'win' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give' | 'have'
+Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave' | 'had'
+Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
+
+% Ditransitive Verbs [Vd (bare stem), Vd-sp (simple past), Vd-pp (past participle)]
+Vd -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
+Vd-sp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
+Vd-pp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'given'
+
+% Was Verbs
+V-was -> 'was' | 'were'
+
+[-sp-that (simple past, with 'that' complement), -sp-to (simple past, with 'to' complement), -to (bare stem, with 'to' complement)]
+Vm-sp-that -> 'told' | 'believed' | 'saw' | 'reminded' % possibly 'demanded' (but its structure is slightly different [I demanded that Nadia eat vs I demanded that Nadia ate])
+Vd-sp-that -> 'told' | 'reminded'
+Vm-sp-to -> 'left' | 'wanted' | 'demanded' | 'had'
+Vd-sp-to -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
+Vm-to -> 'leave' | 'want' | 'demand' | 'have'
+Vd-to -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
