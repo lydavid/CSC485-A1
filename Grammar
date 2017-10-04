@@ -36,7 +36,9 @@ PP -> P NP_o
 AdvP -> Adv AdvV | Adv
 
 
-% Verb Phrases using intransitive verbs in simple past tense, includes no Auxiliaries
+% Verb Phrases using intransitive verbs in simple past tense, includes no auxiliaries
+% It's important to distinguish between VP with and without aux, as 3.3 will have embedded VP
+% and something like 'I want to will have eaten' makes no sense
 VP -> Vi-sp
 VP -> AdvP Vi-sp    % maybe do: S-> NP VP, S -> NP VP PP
 
@@ -132,6 +134,9 @@ Aux-Vi-gp -> AuxModal AuxModalPerfect AuxPerfectProgressive
 %VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive Vt-ppP
 %VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive
+
+
+% Subcategorization Rules
 
 
 % reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)

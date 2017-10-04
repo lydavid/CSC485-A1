@@ -30,10 +30,10 @@ NPro_o -> 'him' | 'her' | 'it' | 'us' | 'them' | 'you'         % object pronouns
 %Vd -> 'give'
 
 
-Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help'
-Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped'
-Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped'
-Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping'
+Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help' | 'demand'
+Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
+Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
+Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping' | 'demanding'
 
 Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give'
 Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave'
@@ -45,9 +45,10 @@ Vd-pp -> 'brought' | 'told' | 'given'
 
 
 
-Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                      % adjectives
-P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'    % prepositions
-Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                 % adverbs
+
+Adj -> 'handsome' | 'tall' | 'long' | 'soft'                                       % adjectives
+P -> 'with' | 'for' | 'on' | 'onto' | 'to' | 'of' | 'from' | 'before' | 'after'    % prepositions
+Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                  % adverbs
 
 AuxModal -> 'can' | 'may' | 'could' | 'should' | 'might' | 'must' | 'would' | 'will'    % auxiliary verbs (modal)
 AuxPerfect -> 'have' | 'had' | 'has'
