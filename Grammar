@@ -2,57 +2,48 @@
 
 % Sentence-level structures without auxiliary verbs
 S -> NP_s VP
-%S -> NP_s VP PP % sentence level PP seems weird
-S -> NP_s VP AdvP
-%S -> NP_s VP PP AdvP
+S -> NP_s VP AdvP    % allows sentence-ending adverbs
 
 % Sentence-level with auxiliary verbs
 S -> NP_s VP-Aux
-%S -> NP_s VP-Aux PP
 S -> NP_s VP-Aux AdvP
-%S -> NP_s VP-Aux PP AdvP
 
 
-NP_s -> NPro_s | NPrpP | NComP    % subject noun phrases
-NP_o -> NPro_o | NPrpP | NComP    % object noun phrases
+% NOUN PHRASES
+NP_s -> NPro_s | NPrp | NComP       % NP_s (subject noun phrase)
+NP_o -> NPro_o | NPrp | NComP       % NP_o (object noun phrases)
 
-%NP -> NPrpP | NComP % NounPhrase -> ProperNounPhrase | CommonNounPhrase
+NComP -> NCountP | NMassP           % NComP (common noun phrase)
 
-NPrpP -> NPrp    % ProperNoun
-NComP -> NCountP | NMassP    % CountNounPhrase | MassNounPhrase
+NCountP -> NVowelP | NConsonantP    % NCountP (count noun phrase)
+NVowelP -> Det-v NVowel             % NVowelP (vowel sound noun phrase)
+NConsonantP -> Det-c NConsonant     % NConsonant (consonant sound noun phrase)
 
-NCountP -> NVowelP | NConsonantP    % VowelSoundNounPhrase | ConsonantSoundNounPhrase
-NVowelP -> Det-v NVowel    % VowelSoundNoun
-NConsonantP -> Det-c NConsonant    % ConsonantSoundNoun
+NMassP -> Det-m NMass | NMass       % NMassP (mass noun phrase)
 
-NMassP -> Det-m NMass | NMass    % MassNoun
+NComP -> NComP PP                   % recursively modify common noun phrases 
+%-> should probably include any NP_o (I saw her with the man/I saw Nadia with the man/I saw the cat with the man) (*I saw she with the man)
+NComP -> Det AdjP | AdjP            % only common noun phrases can be modified with adjectives
 
-NComP -> NComP PP    % recursively modify common noun phrases -> should probably include any NP_o (I saw her with the man/I saw Nadia with the man/I saw the cat with the man) (*I saw she with the man)
-NComP -> Det AdjP | AdjP
-AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
-
-PP -> P NP_o
-
-% normally, a string of adverbs would be comma separated, but that's outside our scope
-AdvP -> Adv AdvV | Adv
+% ADJECTIVE/PREPOSITIONAL/ADVERBIAL PHRASES
+AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant    % adjective phrase, allows for a chain of adjectives
+PP -> P NP_o                                                  % prepositional phrase
+AdvP -> Adv AdvV | Adv                                        % adverbial phrase
 
 
-% Verb Phrases using intransitive verbs in simple past tense, includes no auxiliaries
-% It's important to distinguish between VP with and without aux, as 3.3 will have embedded VP
-% and something like 'I want to will have eaten' makes no sense
-VP -> Vi-sp
-VP -> AdvP Vi-sp    % maybe do: S-> NP VP, S -> NP VP PP
+% 3.1 Verb Phrases using intransitive verbs in simple past tense, includes no auxiliaries
+%     It's important to distinguish between VP with and without aux, as 3.3 will have embedded VP
+%     and something like 'I want to will have eaten' makes no sense
+VP -> Vi-sp            % regular intransitive verb structure
+VP -> AdvP Vi-sp       %     and with an adverb before the verb
+
+VP -> AdvP VP          % adverb right before a verb phrase without aux
+
+VP -> VP PP            % preposition after a verb phrase without aux
+VP-Aux -> VP-Aux PP    % preposition after a verb phrase with aux
 
 
-% Can do this for VP w/o aux
-VP -> AdvP VP
-
-% PP after a verb
-VP -> VP PP
-VP-Aux -> VP-Aux PP
-
-
-% Auxiliary System For Intransitive Verbs + Existential Passive
+% 3.2 Auxiliary System For Intransitive Verbs + Existential Passive
 
 VP-Aux -> Aux-Vi Vi | Aux-Vi AdvP Vi                  % auxiliary involving an intransitive verb in bare stem form
 VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp AdvP Vi-gp      % auxiliary involving an intransitive verb in gerundive participle form
@@ -109,7 +100,7 @@ Aux-Vi-gp -> AuxModal AuxModalPerfect AuxPerfectProgressive
 Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive
 
 
-% Subcategorization Rules
+% 3.3 Subcategorization Rules
 
 % NP frame
 VP -> Vm-sp NP_o
