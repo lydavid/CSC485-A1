@@ -95,7 +95,7 @@ def main():
     # for sentence in sentence_list:
     # 	parse(sentence, grammar, parser)
 
-    ### Test every of our own sentences ###
+    ### Test every of our own sentences ####
     print('\nSentences\n')
     with open('A1-test - Copy.txt', 'r') as afile:
     #with open('Sentences', 'r') as afile:

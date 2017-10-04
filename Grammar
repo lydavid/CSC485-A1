@@ -156,8 +156,8 @@ VP -> Vd-sp NP_o NP_o
 VP -> Vm-sp-that RelativePronoun S
 VP -> Vd-sp-that NP_o RelativePronoun S
 
-VP -> Vm-sp-to ParticleTo V-infP % I wanted to help
-VP -> Vd-sp-to NP_o ParticleTo V-infP % they told her to jump onto the elephant
+VP -> Vm-sp-to ParticleTo V-inf-P % I wanted to help
+VP -> Vd-sp-to NP_o ParticleTo V-inf-P % they told her to jump onto the elephant
 
 V-inf-P -> AdvP V-inf-P
 
