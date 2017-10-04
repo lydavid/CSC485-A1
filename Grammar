@@ -136,7 +136,12 @@ Aux-Vi-gp -> AuxModal AuxModalPerfect AuxPerfectProgressive
 Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive
 
 
+
+
 % Subcategorization Rules
+VP -> Vm-sp NP_o
+VP -> Vm-sp NP_o PP
+
 
 
 % reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)
