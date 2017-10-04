@@ -1,12 +1,10 @@
 % David Ly, lydavid1, 1001435501
 
 % Sentence-level structures
-%S -> NP VP
-%S -> NPro_s VP
-
-% Generic sentences with no agreement
 S -> NP_s VP
 S -> NP_s VP PP
+S -> NP_s VP AdvP
+S -> NP_s VP PP AdvP
 
 
 NP_s -> NPro_s | NPrpP | NComP    % subject noun phrases
@@ -29,10 +27,15 @@ AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 
 PP -> P NP_o
 
+AdvP -> Adv AdvV | Adv
+
 
 % Verb Phrases using intransitive verbs in simple past tense
 VP -> Vi-sp
 VP -> Vi-sp PP % maybe do: S-> NP VP, S -> NP VP PP
+
+
+Vt-ppP -> Vm-pp | Vd-pp NP_o    % (mono/di) transitive verb phrase in past participle form
 
 
 % Auxiliary System For Intransitive Verbs
@@ -41,57 +44,61 @@ VP -> Vi-sp PP % maybe do: S-> NP VP, S -> NP VP PP
 % [0001] Passive (I am eaten/Nadia is eaten)
 % Passive verb has to be transitive in past participle form
 % for ditransitive verbs: requires a NP after (I am given a cat/Nadia ia given a cat)
-VP -> AuxPassive Vm-pp
-VP -> AuxPassive Vd-pp NP_o
+VP -> AuxPassive Vt-ppP
+VP -> AuxPassive AdvP Vt-ppP
 
 % [0010] Progressive (I am eating/Nadia is eating)
 VP -> AuxProgressive Vi-gp
+VP -> AuxProgressive AdvP Vi-gp
 
 % [0011] Progressive Passive (I am being eaten/Nadia is being eaten)
-VP -> AuxProgressive AuxProgressivePassive Vm-pp
-VP -> AuxProgressive AuxProgressivePassive Vd-pp NP_o
+VP -> AuxProgressive AuxProgressivePassive Vt-ppP
+VP -> AuxProgressive AuxProgressivePassive AdvP Vt-ppP
 
 % [0100] Perfect (I have eaten/Nadia has eaten)
 VP -> AuxPerfect Vi-pp
+VP -> AuxPerfect AdvP Vi-pp
 
 % [0101] Perfect Passive (I have been eaten/Nadia has been eaten)
-VP -> AuxPerfect AuxPerfectPassive Vm-pp
-VP -> AuxPerfect AuxPerfectPassive Vd-pp NP_o
+VP -> AuxPerfect AuxPerfectPassive Vt-ppP
+VP -> AuxPerfect AuxPerfectPassive AdvP Vt-ppP
 
 % [0110] Perfect Progressive (I have been eating/Nadia has been eating)
 VP -> AuxPerfect AuxPerfectProgressive Vi-gp
+VP -> AuxPerfect AuxPerfectProgressive AdvP Vi-gp
 
 % [0111] Perfect Progressive Passive (I have been being eaten/Nadia has been being eaten)
-VP -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive Vm-pp
-VP -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive Vd-pp NP_o
+VP -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive Vt-ppP
+VP -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive AdvP Vt-ppP
 
 % [1000] Modal (I will eat/Nadia will eat)
-VP -> AuxModal Vi
+VP -> AuxModal (AdvP) Vi
+%VP -> AuxModal AdvP Vi
 
 % [1001] Modal Passive (I will be eaten/Nadia will be eaten)
-VP -> AuxModal AuxModalPassive Vm-pp
-VP -> AuxModal AuxModalPassive Vd-pp NP_o
+VP -> AuxModal AuxModalPassive Vt-ppP
+VP -> AuxModal AuxModalPassive AdvP Vt-ppP
 
 % [1010] Modal Progressive (I will be eating/Nadia will be eating)
 VP -> AuxModal AuxModalProgressive Vi-gp
 
 % [1011] Modal Progressive Passive (I will be being eaten/Nadia will be being eaten)
-VP -> AuxModal AuxModalProgressive AuxProgressivePassive Vm-pp
-VP -> AuxModal AuxModalProgressive AuxProgressivePassive Vd-pp NP_o
+VP -> AuxModal AuxModalProgressive AuxProgressivePassive Vt-ppP
+VP -> AuxModal AuxModalProgressive AuxProgressivePassive AdvP Vt-ppP
 
 % [1100] Modal Perfect (I will have eaten/Nadia will have eaten [currently: Nadia will has eaten -> wrong])
 VP -> AuxModal AuxModalPerfect Vi-pp
 
 % [1101] Modal Perfect Passive (I will have been eaten/Nadia will have been eaten)
-VP -> AuxModal AuxModalPerfect AuxPerfectPassive Vm-pp
-VP -> AuxModal AuxModalPerfect AuxPerfectPassive Vd-pp NP_o
+VP -> AuxModal AuxModalPerfect AuxPerfectPassive Vt-ppP
+VP -> AuxModal AuxModalPerfect AuxPerfectPassive AdvP Vt-ppP
 
 % [1110] Modal Perfect Progressive (I will have been eating/Nadia will have been eating)
 VP -> AuxModal AuxModalPerfect AuxPerfectProgressive Vi-gp
 
 % [1111] Modal Perfect Progressive Passive (I will have been being eaten/Nadia will have been being eaten)
-VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive Vm-pp
-VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive Vd-pp NP_o
+VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive Vt-ppP
+VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive AdvP Vt-ppP
 
 
 
@@ -100,7 +107,7 @@ VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive Vd-pp
 %VP -> V NP_o     % for a simple transitive verb
 %VP -> V NP_o PP
 
-VP -> VP Adv   % adverbs before verb phrase and after -> before verb doesn't always make sense [VP -> Adv VP]
+%VP -> VP Adv   % adverbs before verb phrase and after -> before verb doesn't always make sense [VP -> Adv VP]
 
 
 
