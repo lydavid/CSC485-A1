@@ -2,15 +2,15 @@
 
 % Sentence-level structures without auxiliary verbs
 S -> NP_s VP
-S -> NP_s VP PP
+%S -> NP_s VP PP % sentence level PP seems weird
 S -> NP_s VP AdvP
-S -> NP_s VP PP AdvP
+%S -> NP_s VP PP AdvP
 
 % Sentence-level with auxiliary verbs
 S -> NP_s VP-Aux
-S -> NP_s VP-Aux PP
+%S -> NP_s VP-Aux PP
 S -> NP_s VP-Aux AdvP
-S -> NP_s VP-Aux PP AdvP
+%S -> NP_s VP-Aux PP AdvP
 
 
 NP_s -> NPro_s | NPrpP | NComP    % subject noun phrases
@@ -27,12 +27,13 @@ NConsonantP -> Det-c NConsonant    % ConsonantSoundNoun
 
 NMassP -> Det-m NMass | NMass    % MassNoun
 
-NComP -> NComP PP    % recursively modify common noun phrases -> should probably included any NP_o (I saw her with the man/I saw Nadia with the man/I saw the cat with the man) (*I saw she with the man)
+NComP -> NComP PP    % recursively modify common noun phrases -> should probably include any NP_o (I saw her with the man/I saw Nadia with the man/I saw the cat with the man) (*I saw she with the man)
 NComP -> Det AdjP | AdjP
 AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 
 PP -> P NP_o
 
+% normally, a string of adverbs would be comma separated, but that's outside our scope
 AdvP -> Adv AdvV | Adv
 
 
@@ -43,13 +44,18 @@ VP -> Vi-sp
 VP -> AdvP Vi-sp    % maybe do: S-> NP VP, S -> NP VP PP
 
 
+% Can do this for VP w/o aux
+VP -> AdvP VP
+
+% PP after a verb
+VP -> VP PP
+VP-Aux -> VP-Aux PP
 
 
-
-VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp Adv Vi-gp
-VP-Aux -> Aux-Vi Vi | Aux-Vi Adv Vi
-VP-Aux -> Aux-Vi-pp Vi-pp | Aux-Vi-pp Adv Vi-pp
-VP-Aux -> Aux-Vt-pp Vt-ppP | Aux-Vt-pp Adv Vt-ppP
+VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp AdvP Vi-gp
+VP-Aux -> Aux-Vi Vi | Aux-Vi AdvP Vi
+VP-Aux -> Aux-Vi-pp Vi-pp | Aux-Vi-pp AdvP Vi-pp
+VP-Aux -> Aux-Vt-pp Vt-ppP | Aux-Vt-pp AdvP Vt-ppP
 Vt-ppP -> Vm-pp | Vd-pp NP_o    % (mono/di) transitive verb phrase in past participle form
 
 
@@ -147,12 +153,18 @@ VP -> Vm-sp NP_o
 % Regular ditransitive
 VP -> Vd-sp NP_o NP_o
 
-VP -> Vm-sp-to ParticleTo VP-inf % I wanted to help
-VP -> Vm-sp-to NP_o ParticleTo VP-inf % they told her to jump onto the elephant
+VP -> Vm-sp-that RelativePronoun S
+VP -> Vd-sp-that NP_o RelativePronoun S
 
-VP-inf -> Vi | Adv Vi
-VP-inf -> Vm NP_o | Adv Vm NP_o
-VP-inf -> Vd NP_o NP_o | Adv Vd NP_o NP_o % they told her to immediately give the cat cheese % they told her to tell him to tell Nadia to eat
+VP -> Vm-sp-to ParticleTo V-infP % I wanted to help
+VP -> Vd-sp-to NP_o ParticleTo V-infP % they told her to jump onto the elephant
+
+V-inf-P -> AdvP V-inf-P
+
+V-inf-P -> Vm-to ParticleTo V-inf-P
+V-inf-P -> Vd-to NP_o ParticleTo V-inf-P
+V-inf-P -> Vi | Vm NP_o | Vd NP_o NComP
+
 
 
 % reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)

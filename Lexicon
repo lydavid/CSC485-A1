@@ -37,9 +37,18 @@ Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing
 Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'win' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give'
 Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave'
 Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
-Vd -> 'bring' | 'tell' | 'give'
-Vd-sp -> 'brought' | 'told' | 'gave'
-Vd-pp -> 'brought' | 'told' | 'given'
+Vd -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
+Vd-sp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
+Vd-pp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'given'
+
+
+Vm-sp-that -> 'told' | 'believed' | 'saw' | 'reminded' % possibly 'demanded' (but its structure is slightly different [I demanded that Nadia eat vs I demanded that Nadia ate])
+Vd-sp-that -> 'told' | 'reminded'
+Vm-sp-to -> 'left' | 'wanted' | 'demanded' | 'was' | 'were'
+Vd-sp-to -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
+Vm-to -> 'leave' | 'want' | 'demand'
+Vd-to -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
+
 
 
 
@@ -61,3 +70,8 @@ AuxPerfectProgressive -> 'been'
 AuxModalPassive -> 'be'
 AuxModalProgressive -> 'be'
 AuxModalPerfect -> 'have'
+
+RelativePronoun -> 'that'
+ParticleTo -> 'to'
+
+
