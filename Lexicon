@@ -5,7 +5,7 @@ Det-m -> 'the' | 'my'          % determiners for mass nouns
 Det-v -> 'the' | 'my' | 'an'   % determiners for vowel sound count nouns
 Det-c -> 'the' | 'my' | 'a'    % determiners for consonant sound count nouns
 
-NMass -> 'fur' | 'cheese' | 'autopoiesis'                                                  % mass nouns
+NMass -> 'fur' | 'cheese' | 'autopoiesis' | 'menu'                                         % mass nouns
 NVowel -> 'eggplant' | 'autoclave' | 'elephant'                                            % vowel sound count nouns
 NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft' | 'rutabaga'    % consonant sound count nouns
 

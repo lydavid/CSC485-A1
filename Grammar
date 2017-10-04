@@ -32,7 +32,7 @@ AdvP -> Adv AdvV | Adv
 
 % Verb Phrases using intransitive verbs in simple past tense
 VP -> Vi-sp
-VP -> Vi-sp PP % maybe do: S-> NP VP, S -> NP VP PP
+VP -> AdvP Vi-sp    % maybe do: S-> NP VP, S -> NP VP PP
 
 
 Vt-ppP -> Vm-pp | Vd-pp NP_o    % (mono/di) transitive verb phrase in past participle form

@@ -97,7 +97,8 @@ def main():
 
     ### Test every of our own sentences ###
     print('\nSentences\n')
-    with open('Sentences', 'r') as afile:
+    with open('A1-test - Copy.txt', 'r') as afile:
+    #with open('Sentences', 'r') as afile:
         sentences = afile.read()
 
     sentences = strip_comments(sentences)
