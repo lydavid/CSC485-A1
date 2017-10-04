@@ -50,6 +50,14 @@ P -> 'with' | 'for' | 'on' | 'onto' | 'to' |'of' | 'from' | 'before' | 'after'  
 Adv -> 'slowly' | 'immediately' | 'already' | 'really' | 'always'                 % adverbs
 
 AuxModal -> 'can' | 'may' | 'could' | 'should' | 'might' | 'must' | 'would' | 'will'    % auxiliary verbs (modal)
-AuxPerfect-non3 -> 'have' | 'had'
-AuxPerfect-3 -> 'has' | 'had'
+AuxPerfect -> 'have' | 'had' | 'has'
+AuxProgressive -> 'are' | 'were' | 'is' | 'was' | 'am'
+AuxPassive -> 'are' | 'were' | 'is' | 'was' | 'am'
 
+
+AuxProgressivePassive -> 'being'
+AuxPerfectPassive -> 'been'
+AuxPerfectProgressive -> 'been'
+AuxModalPassive -> 'be'
+AuxModalProgressive -> 'be'
+AuxModalPerfect -> 'have'

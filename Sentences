@@ -84,10 +84,10 @@ I ate the rutabaga
 %%% Auxiliary System Tests %%%
 Nadia will leave
 Nadia has left
-%Nadia may have been leaving
+Nadia may have been leaving
 *Nadia will left
-%*Nadia has could leave
-%*Nadia has had left
+*Nadia has could leave
+*Nadia has had left
 
 you should leave
 
@@ -98,3 +98,35 @@ Nadia had eaten slowly
 *Nadia had slowly eaten
 *Nadia slowly had eaten
 *you has eaten
+
+I am eaten
+I am eating
+I am being eaten
+I have eaten
+I have been eaten
+I have been eating
+I have been being eaten
+I will eat
+I will be eaten
+I will be eating
+I will be being eaten
+I will have eaten
+I will have been eaten
+I will have been eating
+I will have been being eaten
+Nadia is eaten
+Nadia is eating
+Nadia is being eaten
+Nadia has eaten
+Nadia has been eaten
+Nadia has been eating
+Nadia has been being eaten
+Nadia will eat
+Nadia will be eaten
+Nadia will be eating
+Nadia will be being eaten
+Nadia will have eaten
+Nadia will have been eaten
+Nadia will have been eating
+Nadia will have been being eaten
+
