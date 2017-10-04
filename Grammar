@@ -165,6 +165,7 @@ V-inf-P -> Vm-to ParticleTo V-inf-P
 V-inf-P -> Vd-to NP_o ParticleTo V-inf-P
 V-inf-P -> Vi | Vm NP_o | Vd NP_o NComP
 
+VP -> V-was NP_o | V-was PP | V-was AdvP PP
 
 
 % reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)

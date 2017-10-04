@@ -34,19 +34,21 @@ Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help'
 Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
 Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
 Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping' | 'demanding'
-Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'win' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give'
-Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave'
+Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'win' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give' | 'have'
+Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave' | 'had'
 Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
 Vd -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
 Vd-sp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
 Vd-pp -> 'brought' | 'told' | 'reminded' | 'demanded' | 'given'
 
+V-was -> 'was' | 'were'
+
 
 Vm-sp-that -> 'told' | 'believed' | 'saw' | 'reminded' % possibly 'demanded' (but its structure is slightly different [I demanded that Nadia eat vs I demanded that Nadia ate])
 Vd-sp-that -> 'told' | 'reminded'
-Vm-sp-to -> 'left' | 'wanted' | 'demanded' | 'was' | 'were'
+Vm-sp-to -> 'left' | 'wanted' | 'demanded' | 'had'
 Vd-sp-to -> 'brought' | 'told' | 'reminded' | 'demanded' | 'gave'
-Vm-to -> 'leave' | 'want' | 'demand'
+Vm-to -> 'leave' | 'want' | 'demand' | 'have'
 Vd-to -> 'bring' | 'tell' | 'remind' | 'demand' | 'give'
 
 
