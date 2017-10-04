@@ -5,7 +5,7 @@ Det-m -> 'the' | 'my'          % determiners for mass nouns
 Det-v -> 'the' | 'my' | 'an'   % determiners for vowel sound count nouns
 Det-c -> 'the' | 'my' | 'a'    % determiners for consonant sound count nouns
 
-NMass -> 'fur' | 'cheese' | 'autopoiesis' | 'menu'                                         % mass nouns
+NMass -> 'fur' | 'cheese' | 'autopoiesis' | 'menu' | 'help'                                % mass nouns
 NVowel -> 'eggplant' | 'autoclave' | 'elephant'                                            % vowel sound count nouns
 NConsonant -> 'cat' | 'boat' | 'poodle' | 'package' | 'man' | 'hovercraft' | 'rutabaga'    % consonant sound count nouns
 
@@ -34,14 +34,13 @@ Vi -> 'arrive' | 'leave' | 'shoot' | 'eat' | 'jump' | 'believe' | 'win' | 'help'
 Vi-sp -> 'arrived' | 'left' | 'shot' | 'ate' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
 Vi-pp -> 'arrived' | 'left' | 'shot' | 'eaten' | 'jumped' | 'believed' | 'won' | 'helped' | 'demanded'
 Vi-gp -> 'arriving' | 'leaving' | 'shooting' | 'eating' | 'jumping' | 'believing' | 'winning' | 'helping' | 'demanding'
-
-Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give'
-Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave'
-Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
-
+Vm -> 'leave' | 'shoot' | 'eat' | 'fondle' | 'bring' | 'tell' | 'jump' | 'believe' | 'win' | 'see' | 'want' | 'help' | 'remind' | 'reward' | 'demand' | 'find' | 'give'
+Vm-sp -> 'left' | 'shot' | 'ate' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'saw' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'gave'
+Vm-pp -> 'left' | 'shot' | 'eaten' | 'fondled' | 'brought' | 'told' | 'jumped' | 'believed' | 'won' | 'seen' | 'wanted' | 'helped' | 'reminded' | 'rewarded' | 'demanded' | 'found' | 'given'
 Vd -> 'bring' | 'tell' | 'give'
 Vd-sp -> 'brought' | 'told' | 'gave'
 Vd-pp -> 'brought' | 'told' | 'given'
+
 
 
 

@@ -27,7 +27,7 @@ NConsonantP -> Det-c NConsonant    % ConsonantSoundNoun
 
 NMassP -> Det-m NMass | NMass    % MassNoun
 
-NComP -> NComP PP    % recursively modify common noun phrases
+NComP -> NComP PP    % recursively modify common noun phrases -> should probably included any NP_o (I saw her with the man/I saw Nadia with the man/I saw the cat with the man) (*I saw she with the man)
 NComP -> Det AdjP | AdjP
 AdjP -> Adj AdjP | Adj NMass | Adj NVowel | Adj NConsonant
 
@@ -139,9 +139,20 @@ Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassiv
 
 
 % Subcategorization Rules
-VP -> Vm-sp NP_o
-VP -> Vm-sp NP_o PP
 
+% Regular monotransitive
+VP -> Vm-sp NP_o
+%VP -> Vm-sp NP_o PP
+
+% Regular ditransitive
+VP -> Vd-sp NP_o NP_o
+
+VP -> Vm-sp-to ParticleTo VP-inf % I wanted to help
+VP -> Vm-sp-to NP_o ParticleTo VP-inf % they told her to jump onto the elephant
+
+VP-inf -> Vi | Adv Vi
+VP-inf -> Vm NP_o | Adv Vm NP_o
+VP-inf -> Vd NP_o NP_o | Adv Vd NP_o NP_o % they told her to immediately give the cat cheese % they told her to tell him to tell Nadia to eat
 
 
 % reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)
