@@ -52,128 +52,86 @@ VP -> VP PP
 VP-Aux -> VP-Aux PP
 
 
-VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp AdvP Vi-gp
-VP-Aux -> Aux-Vi Vi | Aux-Vi AdvP Vi
-VP-Aux -> Aux-Vi-pp Vi-pp | Aux-Vi-pp AdvP Vi-pp
-VP-Aux -> Aux-Vt-pp Vt-ppP | Aux-Vt-pp AdvP Vt-ppP
-Vt-ppP -> Vm-pp | Vd-pp NP_o    % (mono/di) transitive verb phrase in past participle form
+% Auxiliary System For Intransitive Verbs + Existential Passive
 
+VP-Aux -> Aux-Vi Vi | Aux-Vi AdvP Vi                  % auxiliary involving an intransitive verb in bare stem form
+VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp AdvP Vi-gp      % auxiliary involving an intransitive verb in gerundive participle form
+VP-Aux -> Aux-Vi-pp Vi-pp | Aux-Vi-pp AdvP Vi-pp      % auxiliary involving an intransitive verb in past participle form
+VP-Aux -> Aux-Vt-pp Vt-ppP | Aux-Vt-pp AdvP Vt-ppP    % auxiliary involving a transitive verb in past participle form
 
-
-
-% Auxiliary System For Intransitive Verbs
-% [Modal Perfect Progressive Passive] = [1111]
+Vt-ppP -> Vm-pp | Vd-pp NP_o                          % (mono/di) transitive verb phrase in past participle form
 
 % [0001] Passive (I am eaten/Nadia is eaten)
-% Passive verb has to be transitive in past participle form
-% for ditransitive verbs: requires a NP after (I am given a cat/Nadia ia given a cat)
-%VP -> AuxPassive Vt-ppP
-%VP -> AuxPassive AdvP Vt-ppP
+%     passive verb has to be transitive in past participle form
+%     for ditransitive verbs: requires an NP after (I am given a cat/Nadia is given a cat) -> maybe don't account for ditransitive here
 Aux-Vt-pp -> AuxPassive
 
 % [0010] Progressive (I am eating/Nadia is eating)
-%VP -> AuxProgressive Vi-gp
-%VP -> AuxProgressive AdvP Vi-gp
 Aux-Vi-gp -> AuxProgressive
 
 % [0011] Progressive Passive (I am being eaten/Nadia is being eaten)
-%VP -> AuxProgressive AuxProgressivePassive Vt-ppP
-%VP -> AuxProgressive AuxProgressivePassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxProgressive AuxProgressivePassive
 
 % [0100] Perfect (I have eaten/Nadia has eaten)
-%VP -> AuxPerfect Vi-pp
-%VP -> AuxPerfect AdvP Vi-pp
 Aux-Vi-pp -> AuxPerfect
 
 % [0101] Perfect Passive (I have been eaten/Nadia has been eaten)
-%VP -> AuxPerfect AuxPerfectPassive Vt-ppP
-%VP -> AuxPerfect AuxPerfectPassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxPerfect AuxPerfectPassive
 
 % [0110] Perfect Progressive (I have been eating/Nadia has been eating)
-%VP -> AuxPerfect AuxPerfectProgressive Vi-gp
-%VP -> AuxPerfect AuxPerfectProgressive AdvP Vi-gp
 Aux-Vi-gp -> AuxPerfect AuxPerfectProgressive
 
 % [0111] Perfect Progressive Passive (I have been being eaten/Nadia has been being eaten)
-%VP -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive Vt-ppP
-%VP -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxPerfect AuxPerfectProgressive AuxProgressivePassive
 
 % [1000] Modal (I will eat/Nadia will eat)
-%VP -> AuxModal Vi
-%VP -> AuxModal AdvP Vi
 Aux-Vi -> AuxModal
 
 % [1001] Modal Passive (I will be eaten/Nadia will be eaten)
-%VP -> AuxModal AuxModalPassive Vt-ppP
-%VP -> AuxModal AuxModalPassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxModal AuxModalPassive
 
 % [1010] Modal Progressive (I will be eating/Nadia will be eating)
-%VP -> AuxModal AuxModalProgressive Vi-gp
-%VP -> AuxModal AuxModalProgressive AdvP Vi-gp
 Aux-Vi-gp -> AuxModal AuxModalProgressive
 
 % [1011] Modal Progressive Passive (I will be being eaten/Nadia will be being eaten)
-%VP -> AuxModal AuxModalProgressive AuxProgressivePassive Vt-ppP
-%VP -> AuxModal AuxModalProgressive AuxProgressivePassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxModal AuxModalProgressive AuxProgressivePassive
 
 % [1100] Modal Perfect (I will have eaten/Nadia will have eaten [currently: Nadia will has eaten -> wrong])
-%VP -> AuxModal AuxModalPerfect Vi-pp
-%VP -> AuxModal AuxModalPerfect AdvP Vi-pp
 Aux-Vi-pp -> AuxModal AuxModalPerfect
 
 % [1101] Modal Perfect Passive (I will have been eaten/Nadia will have been eaten)
-%VP -> AuxModal AuxModalPerfect AuxPerfectPassive Vt-ppP
-%VP -> AuxModal AuxModalPerfect AuxPerfectPassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectPassive
 
 % [1110] Modal Perfect Progressive (I will have been eating/Nadia will have been eating)
-%VP -> AuxModal AuxModalPerfect AuxPerfectProgressive Vi-gp
-%VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AdvP Vi-gp
 Aux-Vi-gp -> AuxModal AuxModalPerfect AuxPerfectProgressive
 
 % [1111] Modal Perfect Progressive Passive (I will have been being eaten/Nadia will have been being eaten)
-%VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive Vt-ppP
-%VP -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive AdvP Vt-ppP
 Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassive
-
-
 
 
 % Subcategorization Rules
 
-% Regular monotransitive
+% NP frame
 VP -> Vm-sp NP_o
 %VP -> Vm-sp NP_o PP
 
-% Regular ditransitive
-VP -> Vd-sp NP_o NP_o
+% NP NP frame
+VP -> Vd-sp NP_o NComP
 
+% 'that' S frame
 VP -> Vm-sp-that RelativePronoun S
 VP -> Vd-sp-that NP_o RelativePronoun S
 
-VP -> Vm-sp-to ParticleTo V-inf-P % I wanted to help
-VP -> Vd-sp-to NP_o ParticleTo V-inf-P % they told her to jump onto the elephant
-
-V-inf-P -> AdvP V-inf-P
+% VP-to frame
+VP -> Vm-sp-to ParticleTo V-inf-P
+VP -> Vd-sp-to NP_o ParticleTo V-inf-P
 
 V-inf-P -> Vm-to ParticleTo V-inf-P
 V-inf-P -> Vd-to NP_o ParticleTo V-inf-P
 V-inf-P -> Vi | Vm NP_o | Vd NP_o NComP
 
+% allows adverbs to modify a verb in a VP-to frame
+V-inf-P -> AdvP V-inf-P
+
+% special case for was/were verb
 VP -> V-was NP_o | V-was PP | V-was AdvP PP
-
-
-% reorganize: VP -> Vm NP_o (Vm = MonoTransitiveVerb) (Vd = DiTransitiveVerb)
-% Mono and ditransitive verb structures 
-%VP -> V NP_o     % for a simple transitive verb
-%VP -> V NP_o PP
-
-
-
-%Assignment 3.6.1 Grammar file example
-%VP -> V NP PP
