@@ -1,2 +1,378 @@
 % David Ly, lydavid1, 1001435501
 
+
+Nadia left
+(S (NP_s (NPrp Nadia)) (VP (Vi-sp left)))
+
+she arrived
+(S (NP_s (NPro_s she)) (VP (Vi-sp arrived)))
+
+an elephant ate
+(S
+  (NP_s (NComP (NCountP (NVowelP (Det-v an) (NVowel elephant)))))
+  (VP (Vi-sp ate)))
+
+a cat immediately left
+(S
+  (NP_s (NComP (NCountP (NConsonantP (Det-c a) (NConsonant cat)))))
+  (VP (AdvP (Adv immediately)) (VP (Vi-sp left))))
+(S
+  (NP_s (NComP (NCountP (NConsonantP (Det-c a) (NConsonant cat)))))
+  (VP (AdvP (Adv immediately)) (Vi-sp left)))
+
+my soft poodle jumped slowly
+(S
+  (NP_s (NComP (Det my) (AdjP (Adj soft) (NConsonant poodle))))
+  (VP (Vi-sp jumped))
+  (AdvP (Adv slowly)))
+
+the tall handsome rutabaga always slowly won
+(S
+  (NP_s
+    (NComP
+      (Det the)
+      (AdjP (Adj tall) (AdjP (Adj handsome) (NConsonant rutabaga)))))
+  (VP (AdvP (Adv always)) (VP (AdvP (Adv slowly)) (VP (Vi-sp won)))))
+(S
+  (NP_s
+    (NComP
+      (Det the)
+      (AdjP (Adj tall) (AdjP (Adj handsome) (NConsonant rutabaga)))))
+  (VP (AdvP (Adv always)) (VP (AdvP (Adv slowly)) (Vi-sp won))))
+
+Nadia is eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux (Aux-Vt-pp (AuxPassive is)) (Vm-pp eaten)))
+
+Nadia is eating
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux (Aux-Vi-gp (AuxProgressive is)) (Vi-gp eating)))
+
+Nadia is being eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp (AuxProgressive is) (AuxProgressivePassive being))
+    (Vm-pp eaten)))
+
+Nadia has eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux (Aux-Vi-pp (AuxPerfect has)) (Vi-pp eaten)))
+
+Nadia has been eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp (AuxPerfect has) (AuxPerfectPassive been))
+    (Vm-pp eaten)))
+
+Nadia has been eating
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vi-gp (AuxPerfect has) (AuxPerfectProgressive been))
+    (Vi-gp eating)))
+
+Nadia has been being eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp
+      (AuxPerfect has)
+      (AuxPerfectProgressive been)
+      (AuxProgressivePassive being))
+    (Vm-pp eaten)))
+
+Nadia can eat
+(S (NP_s (NPrp Nadia)) (VP-Aux (Aux-Vi (AuxModal can)) (Vi eat)))
+
+Nadia may be eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp (AuxModal may) (AuxModalPassive be))
+    (Vm-pp eaten)))
+
+Nadia could be eating
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vi-gp (AuxModal could) (AuxModalProgressive be))
+    (Vi-gp eating)))
+
+Nadia should be being eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp
+      (AuxModal should)
+      (AuxModalProgressive be)
+      (AuxProgressivePassive being))
+    (Vm-pp eaten)))
+
+Nadia might have eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vi-pp (AuxModal might) (AuxModalPerfect have))
+    (Vi-pp eaten)))
+
+Nadia must have been eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp
+      (AuxModal must)
+      (AuxModalPerfect have)
+      (AuxPerfectPassive been))
+    (Vm-pp eaten)))
+
+Nadia would have been eating
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vi-gp
+      (AuxModal would)
+      (AuxModalPerfect have)
+      (AuxPerfectProgressive been))
+    (Vi-gp eating)))
+
+Nadia will have been being eaten
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux
+    (Aux-Vt-pp
+      (AuxModal will)
+      (AuxModalPerfect have)
+      (AuxPerfectProgressive been)
+      (AuxProgressivePassive being))
+    (Vm-pp eaten)))
+
+Nadia ate the cheese
+(S
+  (NP_s (NPrp Nadia))
+  (VP (Vm-sp ate) (NP_o (NComP (NMassP (Det-m the) (NMass cheese))))))
+
+I had to help
+(S
+  (NP_s (NPro_s I))
+  (VP (Vm-sp-to had) (ParticleTo to) (V-inf-P (Vi help))))
+
+I had to help Nadia
+(S
+  (NP_s (NPro_s I))
+  (VP
+    (Vm-sp-to had)
+    (ParticleTo to)
+    (V-inf-P (Vm help) (NP_o (NPrp Nadia)))))
+
+I had to tell Ross to eat
+(S
+  (NP_s (NPro_s I))
+  (VP
+    (Vm-sp-to had)
+    (ParticleTo to)
+    (V-inf-P
+      (Vd-to tell)
+      (NP_o (NPrp Ross))
+      (ParticleTo to)
+      (V-inf-P (Vi eat)))))
+
+Ross believed that Nadia ate the cheese
+(S
+  (NP_s (NPrp Ross))
+  (VP
+    (Vm-sp-that believed)
+    (RelativePronoun that)
+    (S
+      (NP_s (NPrp Nadia))
+      (VP
+        (Vm-sp ate)
+        (NP_o (NComP (NMassP (Det-m the) (NMass cheese))))))))
+
+it gave Nadia the cat
+(S
+  (NP_s (NPro_s it))
+  (VP
+    (Vd-sp gave)
+    (NP_o (NPrp Nadia))
+    (NComP (NCountP (NConsonantP (Det-c the) (NConsonant cat))))))
+
+she brought Nadia to help
+(S
+  (NP_s (NPro_s she))
+  (VP
+    (Vd-sp-to brought)
+    (NP_o (NPrp Nadia))
+    (ParticleTo to)
+    (V-inf-P (Vi help))))
+(S
+  (NP_s (NPro_s she))
+  (VP
+    (VP (Vm-sp brought) (NP_o (NPrp Nadia)))
+    (PP (P to) (NP_o (NComP (NMassP (NMass help)))))))
+
+I told Nadia that he shot Ross
+(S
+  (NP_s (NPro_s I))
+  (VP
+    (Vd-sp-that told)
+    (NP_o (NPrp Nadia))
+    (RelativePronoun that)
+    (S (NP_s (NPro_s he)) (VP (Vm-sp shot) (NP_o (NPrp Ross))))))
+
+she was always with him
+(S
+  (NP_s (NPro_s she))
+  (VP
+    (V-was was)
+    (AdvP (Adv always))
+    (PP (P with) (NP_o (NPro_o him)))))
+
+I told Nadia to tell Ross to tell her to tell him to eat the cat
+(S
+  (NP_s (NPro_s I))
+  (VP
+    (Vd-sp-to told)
+    (NP_o (NPrp Nadia))
+    (ParticleTo to)
+    (V-inf-P
+      (Vd-to tell)
+      (NP_o (NPrp Ross))
+      (ParticleTo to)
+      (V-inf-P
+        (Vd-to tell)
+        (NP_o (NPro_o her))
+        (ParticleTo to)
+        (V-inf-P
+          (Vd-to tell)
+          (NP_o (NPro_o him))
+          (ParticleTo to)
+          (V-inf-P
+            (Vm eat)
+            (NP_o
+              (NComP
+                (NCountP (NConsonantP (Det-c the) (NConsonant cat)))))))))))
+
+I eat
+No parses
+
+her arrived
+No parses
+
+a elephant ate
+No parses
+
+Nadia arrived Ross
+No parses
+
+Nadia gave
+No parses
+
+Nadia has eating
+No parses
+
+Nadia could ate
+No parses
+
+Nadia must has been eaten
+No parses
+
+Nadia must have be eaten
+No parses
+
+Nadia is eat 
+No parses
+
+Nadia immediately could be eaten 
+No parses
+
+Nadia may will eaten 
+No parses
+
+Nadia is been eaten
+No parses
+
+I told him her
+No parses
+
+he wanted to may have eaten
+No parses
+
+I slowly ate slowly
+(S
+  (NP_s (NPro_s I))
+  (VP (AdvP (Adv slowly)) (VP (Vi-sp ate)))
+  (AdvP (Adv slowly)))
+(S
+  (NP_s (NPro_s I))
+  (VP (AdvP (Adv slowly)) (Vi-sp ate))
+  (AdvP (Adv slowly)))
+
+I ate on the cat always
+(S
+  (NP_s (NPro_s I))
+  (VP
+    (VP (Vi-sp ate))
+    (PP
+      (P on)
+      (NP_o
+        (NComP (NCountP (NConsonantP (Det-c the) (NConsonant cat)))))))
+  (AdvP (Adv always)))
+
+I has eaten
+(S
+  (NP_s (NPro_s I))
+  (VP-Aux (Aux-Vi-pp (AuxPerfect has)) (Vi-pp eaten)))
+
+Nadia have left
+(S
+  (NP_s (NPrp Nadia))
+  (VP-Aux (Aux-Vi-pp (AuxPerfect have)) (Vi-pp left)))
+
+she told Nadia that he was a cat
+(S
+  (NP_s (NPro_s she))
+  (VP
+    (Vd-sp-that told)
+    (NP_o (NPrp Nadia))
+    (RelativePronoun that)
+    (S
+      (NP_s (NPro_s he))
+      (VP
+        (V-was was)
+        (NP_o
+          (NComP (NCountP (NConsonantP (Det-c a) (NConsonant cat)))))))))
+
+immediately I told Nadia
+No parses
+
+Nadia could have been given a cat
+No parses
+
+I was to tell Nadia
+No parses
+
+I saw Nadia with the cat ate the man
+No parses
+
+the cat that was with Nadia ate
+No parses
+
+I told Nadia to believe that I wanted the ate
+No parses
+
+Nadia was eating cheese    
+No parses
+
+Nadia ate the cat that I saw
+No parses
+
+I eat cheese
+No parses
+
+the man helping Nadia demanded Ross to leave
+No parses
