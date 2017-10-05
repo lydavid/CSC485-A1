@@ -83,11 +83,11 @@ def main():
     parser = nltk.parse.BottomUpChartParser(grammar)
 
     ### Tests for 3.1 ###
-    parse('Nadia left immediately', grammar, parser)
-    parse('the cat with the long soft fur slowly ate', grammar, parser)
-    parse('she arrived', grammar, parser)
-    parse('Nadia with the long soft fur slowly ate', grammar, parser, False)
-    parse('the cat with the tall her arrived', grammar, parser, False)
+    # parse('Nadia left immediately', grammar, parser)
+    # parse('the cat with the long soft fur slowly ate', grammar, parser)
+    # parse('she arrived', grammar, parser)
+    # parse('Nadia with the long soft fur slowly ate', grammar, parser, False)
+    # parse('the cat with the tall her arrived', grammar, parser, False)
 
 
     ### Test every test sentences provided for us ###

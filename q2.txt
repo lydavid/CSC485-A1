@@ -1,0 +1,4 @@
+a. There are 8 different trees.
+
+b. We get infinitely many NP branches.
+The order change actually resolved our issue. This is only an adequate solution in the case where you automatically step into the first available choice. Otherwise this wouldn't normally be an issue to begin with as you can choose a different choice that won't send you down an rabbit hole.

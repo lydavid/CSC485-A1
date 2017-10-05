@@ -1,21 +1,26 @@
 % David Ly, lydavid1, 1001435501
 
-% good sentences but excluded
+% no adverbs in beginning of sentence
+immediately I told Nadia
 
-% 3.1 Simple Sentences
-%I saw Nadia with the man    % couldn't attach PP to pronouns -> actually parses cause of VP PP
+% no particle constructions outside of 'to'
+Ross went on to win
 
-% 3.2 Aux
-Nadia could have been given a cat    % excluded passive di-transitive construction
-I will eat    % did not handle future tense
+% excluded passive di-transitive construction
+Nadia could have been given a cat
 
-
-
-% 3.3 Subcategorization
-I was to tell Nadia    % was not included in verb-to lists to avoid sentences like: 'I want to was Nadia'
-I saw Nadia with the cat ate the man    % cannot chain our verbs in this way
-the cat that was with Nadia ate    % 'that' cannot be used in this way
-I told Nadia to believe that I wanted the ate    % our chain of infinitive verbs can't take 'that'
-Nadia was eating    % did not handle gerundive participle with 'was'
-Nadia ate the cat that I saw    % 
-I eat cheese    % no present tense
+% was not included in verb-to lists to avoid sentences like: 'I want to was Nadia'
+I was to tell Nadia
+% cannot chain our verbs in this way
+I saw Nadia with the cat ate the man
+% 'that' cannot be used in this way
+the cat that was with Nadia ate
+% our chain of infinitive verbs can't take 'that'
+I told Nadia to believe that I wanted the ate
+% did not handle gerundive participle with transitives
+Nadia was eating cheese    
+Nadia ate the cat that I saw
+% no present tense
+I eat cheese
+% no embedded verb phrases
+the man helping Nadia demanded Ross to leave
