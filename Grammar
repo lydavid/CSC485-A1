@@ -22,7 +22,6 @@ NConsonantP -> Det-c NConsonant     % NConsonant (consonant sound noun phrase)
 NMassP -> Det-m NMass | NMass       % NMassP (mass noun phrase)
 
 NComP -> NComP PP                   % recursively modify common noun phrases 
-%-> should probably include any NP_o (I saw her with the man/I saw Nadia with the man/I saw the cat with the man) (*I saw she with the man)
 NComP -> Det AdjP | AdjP            % only common noun phrases can be modified with adjectives
 
 % ADJECTIVE/PREPOSITIONAL/ADVERBIAL PHRASES
@@ -48,9 +47,7 @@ VP-Aux -> VP-Aux PP    % preposition after a verb phrase with aux
 VP-Aux -> Aux-Vi Vi | Aux-Vi AdvP Vi                  % auxiliary involving an intransitive verb in bare stem form
 VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp AdvP Vi-gp      % auxiliary involving an intransitive verb in gerundive participle form
 VP-Aux -> Aux-Vi-pp Vi-pp | Aux-Vi-pp AdvP Vi-pp      % auxiliary involving an intransitive verb in past participle form
-VP-Aux -> Aux-Vt-pp Vm-pp | Aux-Vt-pp AdvP Vm-pp    % auxiliary involving a mono-transitive verb in past participle form
-
-%Vt-ppP -> Vm-pp | Vd-pp NP_o                          % (mono/di) transitive verb phrase in past participle form
+VP-Aux -> Aux-Vt-pp Vm-pp | Aux-Vt-pp AdvP Vm-pp      % auxiliary involving a mono-transitive verb in past participle form
 
 % [0001] Passive (I am eaten/Nadia is eaten)
 %     passive verb has to be transitive in past participle form

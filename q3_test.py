@@ -102,7 +102,7 @@ def main():
     # 	parse(sentence, grammar, parser)
 
     ### Test every of our own sentences ####
-    test_files = ['Positive', 'Negative', 'Overgen', 'Undergen']
+    test_files = ['Positive', 'Negative', 'Overgen', 'Undergen', 'A1-test - Copy.txt']
     for file in test_files:
 
         print(file + '\n')
