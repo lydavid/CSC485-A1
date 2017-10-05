@@ -22,17 +22,20 @@ def parse(sentence, grammar, parser, should_parse=True):
         sentence = sentence[1:]
         should_parse = False
 
-    head_string = '\n(' + sentence + ')'
-    if should_parse:
-        head_string = head_string + ' (Should parse)'
-    else:
-        head_string = head_string + ' (Should not parse)'
+    head_string = '\n' + sentence
+    # if should_parse:
+    #     head_string = head_string + ' (Should parse)'
+    # else:
+    #     head_string = head_string + ' (Should not parse)'
     print(head_string + '\n')
 
     # If a sentence is not accepted by our grammar, print: No parses
 
     for tree in parser.parse_all(sentence.split()):
-        print(tree)
+        if tree:
+            print(tree)
+        else:
+            print("No parses")
 
 def strip_comments(string, symbol='%'):
 
