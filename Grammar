@@ -101,7 +101,6 @@ Aux-Vt-pp -> AuxModal AuxModalPerfect AuxPerfectProgressive AuxProgressivePassiv
 
 % NP frame
 VP -> Vm-sp NP_o
-%VP -> Vm-sp NP_o PP
 
 % NP NP frame
 VP -> Vd-sp NP_o NComP
