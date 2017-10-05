@@ -48,9 +48,9 @@ VP-Aux -> VP-Aux PP    % preposition after a verb phrase with aux
 VP-Aux -> Aux-Vi Vi | Aux-Vi AdvP Vi                  % auxiliary involving an intransitive verb in bare stem form
 VP-Aux -> Aux-Vi-gp Vi-gp | Aux-Vi-gp AdvP Vi-gp      % auxiliary involving an intransitive verb in gerundive participle form
 VP-Aux -> Aux-Vi-pp Vi-pp | Aux-Vi-pp AdvP Vi-pp      % auxiliary involving an intransitive verb in past participle form
-VP-Aux -> Aux-Vt-pp Vt-ppP | Aux-Vt-pp AdvP Vt-ppP    % auxiliary involving a transitive verb in past participle form
+VP-Aux -> Aux-Vt-pp Vm-pp | Aux-Vt-pp AdvP Vm-pp    % auxiliary involving a mono-transitive verb in past participle form
 
-Vt-ppP -> Vm-pp | Vd-pp NP_o                          % (mono/di) transitive verb phrase in past participle form
+%Vt-ppP -> Vm-pp | Vd-pp NP_o                          % (mono/di) transitive verb phrase in past participle form
 
 % [0001] Passive (I am eaten/Nadia is eaten)
 %     passive verb has to be transitive in past participle form

@@ -1,13 +1,12 @@
 % David Ly, lydavid1, 1001435501
 
-% 3.1 Simple
-
-Nadia left % single noun
+% 3.1 Simple Sentences
+Nadia left
 she arrived
 an elephant ate
 a cat immediately left
-my soft poodle always won
-the cat on my
+my soft poodle jumped slowly
+the tall handsome rutabaga always slowly won
 
 % 3.2 Aux
 Nadia is eaten
@@ -26,16 +25,26 @@ Nadia must have been eaten
 Nadia would have been eating
 Nadia will have been being eaten
 
-I am always helping
-Ross could be leaving immediately
-the long poodle should have been being always fondled
+% 3.3 Subcategorization
 
-% 3.3 Positive Tests
-
+% mono-transitive with noun phrase complement
+Nadia ate the cheese
+% mono-transitive with intransitive verb complement
 I had to help
+% mono-transitive with mono-transitive verb complement
+I had to help Nadia
+% mono-transitive with di-transitive verb complement
+I had to tell Ross to eat
+% mono-transitive with sentence complement
 Ross believed that Nadia ate the cheese
-the handsome cat left to help
-it gave Nadia the cat
-she brought Nadia to help
-I told Nadia that he shot Ross
 
+% di-transitive with two noun phrase complements
+it gave Nadia the cat
+% di-transitive with noun phrase and infinitive verb complement
+she brought Nadia to help
+% di-transitive with sentence complement
+I told Nadia that he shot Ross
+% 'was' verb with prepositional phrase complement
+she was always with him
+% long chain of infinitive verb complements
+I told Nadia to tell Ross to tell her to tell him to eat the cat
